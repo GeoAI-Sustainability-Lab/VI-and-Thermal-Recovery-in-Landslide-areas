@@ -3,9 +3,6 @@
 Data and code for a satellite-scale test of whether land surface temperature (LST) recovers
 as fast as greenness after forest disturbance, in the montane forests of Taiwan, 2013–2026.
 
-本倉庫提供全部分析資料與程式。設計原則是：**每一個統計量都能由此處的表格與程式重新算出**，
-且每一份原始影像都寫明取用位置，讓審閱者能自行從頭重建。倉庫不存放任何影像或圖檔。
-
 ---
 
 ## 1. What the analysis establishes
