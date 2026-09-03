@@ -22,6 +22,7 @@ STEPS = [
     ("step21_within_patch.py", "within_patch.json", False),
     ("step18_morakot.py", "morakot.json", False),
     ("step27_table2.py", "table2_agents.json", False),
+    ("step28_descriptive_meta.py", "grid_meta.json", False),
     ("step17_strata_curves.py", "strata_curves.json", True),
     ("step22_epoch_era.py", "epoch_era.json", True),
 ]
@@ -47,6 +48,10 @@ CHECKS = [
     ("strata_curves.json", "gt2000.thermal.tau", "tau_LST above 2,000 m"),
     ("strata_curves.json", "hansen.greenness.tau", "tau_NDVI, annual loss"),
     ("epoch_era.json", "all.thermal.tau", "tau_LST, all epochs"),
+    ("grid_meta.json", "catalogue.date_quality.canonical", "catalogue records with canonical dates"),
+    ("grid_meta.json", "intact_sample.slice_250m", "intact-forest pixels in the 250 m-slice analysis"),
+    ("grid_meta.json", "curve.anom_at_15", "canopy curve at 15 m, °C"),
+    ("grid_meta.json", "mixed_fit.ratio", "tau ratio when sources are pooled"),
 ]
 
 

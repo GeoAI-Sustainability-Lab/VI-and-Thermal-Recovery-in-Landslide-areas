@@ -1,0 +1,1874 @@
+{
+ "1": {
+  "year": 2004,
+  "event": "康森、敏督利",
+  "agent": "typhoon_rain",
+  "t_event": 2004.5379876796715,
+  "n": 980,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "2": {
+  "year": 2004,
+  "event": "康柏斯、蘭寧、艾利、海馬、米雷、納坦、南瑪都",
+  "agent": "typhoon_rain",
+  "t_event": 2004.5379876796715,
+  "n": 1085,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "3": {
+  "year": 2005,
+  "event": "0512豪雨、0612豪雨",
+  "agent": "rainfall",
+  "t_event": 2005.5352498288844,
+  "n": 1,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "4": {
+  "year": 2005,
+  "event": "0512豪雨、0612豪雨、海棠颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 2,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "5": {
+  "year": 2005,
+  "event": "0512豪雨、0612豪雨、海棠颱風、馬莎颱風、泰利颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 5,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "6": {
+  "year": 2005,
+  "event": "0512豪雨、0612豪雨、海棠颱風、馬莎颱風、泰利颱風、卡努颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 38,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "7": {
+  "year": 2005,
+  "event": "0512豪雨、0612豪雨、海棠颱風、馬莎颱風、泰利颱風、卡努颱風、龍王颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 118,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "8": {
+  "year": 2005,
+  "event": "0612豪雨、海棠颱風、馬莎颱風、泰利颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 15,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "9": {
+  "year": 2005,
+  "event": "0612豪雨、海棠颱風、馬莎颱風、泰利颱風、卡努颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 21,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "10": {
+  "year": 2005,
+  "event": "0612豪雨、海棠颱風、馬莎颱風、泰利颱風、卡努颱風、龍王颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 38,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "11": {
+  "year": 2005,
+  "event": "卡努颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 3,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "12": {
+  "year": 2005,
+  "event": "卡努颱風、龍王颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 19,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "13": {
+  "year": 2005,
+  "event": "海棠颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 3,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "14": {
+  "year": 2005,
+  "event": "海棠颱風、馬莎颱風、泰利颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 54,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "15": {
+  "year": 2005,
+  "event": "海棠颱風、馬莎颱風、泰利颱風、卡努颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 136,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "16": {
+  "year": 2005,
+  "event": "海棠颱風、馬莎颱風、泰利颱風、卡努颱風、龍王颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 210,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "17": {
+  "year": 2005,
+  "event": "馬莎颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 1,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "18": {
+  "year": 2005,
+  "event": "馬莎颱風、泰利颱風、卡努颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 7,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "19": {
+  "year": 2005,
+  "event": "馬莎颱風、泰利颱風、卡努颱風、龍王颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 17,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "20": {
+  "year": 2005,
+  "event": "龍王颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2005.5352498288844,
+  "n": 43,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "21": {
+  "year": 2006,
+  "event": "0609豪雨",
+  "agent": "rainfall",
+  "t_event": 2006.4366872005476,
+  "n": 9,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "22": {
+  "year": 2006,
+  "event": "0609豪雨、0709豪雨、碧利斯颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2006.5352498288844,
+  "n": 820,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "23": {
+  "year": 2006,
+  "event": "0709豪雨、碧利斯颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2006.5352498288844,
+  "n": 588,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "24": {
+  "year": 2007,
+  "event": "",
+  "agent": "unknown",
+  "t_event": 2007.5352498288844,
+  "n": 1,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "25": {
+  "year": 2007,
+  "event": "0604豪雨",
+  "agent": "rainfall",
+  "t_event": 2007.422997946612,
+  "n": 4,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "26": {
+  "year": 2007,
+  "event": "0604豪雨、0809豪雨、聖帕颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2007.5352498288844,
+  "n": 100,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "27": {
+  "year": 2007,
+  "event": "0604豪雨、0809豪雨、聖帕颱風、韋帕颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2007.5352498288844,
+  "n": 35,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "28": {
+  "year": 2007,
+  "event": "0604豪雨、0809豪雨、聖帕颱風、韋帕颱風、柯羅莎颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2007.5352498288844,
+  "n": 1264,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "29": {
+  "year": 2007,
+  "event": "0604豪雨、0809豪雨、聖帕颱風、韋帕颱風、柯羅莎颱風、米塔颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2007.5352498288844,
+  "n": 3108,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "30": {
+  "year": 2007,
+  "event": "柯羅莎颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2007.5352498288844,
+  "n": 13,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "31": {
+  "year": 2007,
+  "event": "柯羅莎颱風、米塔颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2007.5352498288844,
+  "n": 2,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "32": {
+  "year": 2007,
+  "event": "米塔颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2007.5352498288844,
+  "n": 2,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "33": {
+  "year": 2007,
+  "event": "韋帕颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2007.5352498288844,
+  "n": 3,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "34": {
+  "year": 2007,
+  "event": "韋帕颱風、柯羅莎颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2007.5352498288844,
+  "n": 17,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "35": {
+  "year": 2007,
+  "event": "韋帕颱風、柯羅莎颱風、米塔颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2007.5352498288844,
+  "n": 1,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "36": {
+  "year": 2008,
+  "event": "卡玫基颱風、鳳凰颱風、辛樂克颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2008.5379876796715,
+  "n": 4,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "37": {
+  "year": 2008,
+  "event": "卡玫基颱風、鳳凰颱風、辛樂克颱風、薔蜜颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2008.5379876796715,
+  "n": 1189,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "38": {
+  "year": 2008,
+  "event": "薔蜜颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2008.5379876796715,
+  "n": 4,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "39": {
+  "year": 2008,
+  "event": "辛樂克颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2008.5379876796715,
+  "n": 3,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "40": {
+  "year": 2008,
+  "event": "辛樂克颱風、薔蜜颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2008.5379876796715,
+  "n": 42,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "41": {
+  "year": 2008,
+  "event": "鳳凰颱風、辛樂克颱風、薔蜜颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2008.5379876796715,
+  "n": 5,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "42": {
+  "year": 2009,
+  "event": "芭瑪颱風、1011豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2009.8884325804245,
+  "n": 131,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "43": {
+  "year": 2009,
+  "event": "莫拉克颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2009.6009582477755,
+  "n": 762,
+  "dq": "canonical",
+  "era": "annual_swcb"
+ },
+ "44": {
+  "year": 2009,
+  "event": "莫拉克颱風、芭瑪颱風、1011豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2009.5790554414784,
+  "n": 10814,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "45": {
+  "year": 2010,
+  "event": "0726豪雨",
+  "agent": "rainfall",
+  "t_event": 2010.5653661875428,
+  "n": 16,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "46": {
+  "year": 2010,
+  "event": "0726豪雨、南修-萊羅克颱風、莫蘭蒂颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2010.6146475017113,
+  "n": 5,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "47": {
+  "year": 2010,
+  "event": "0726豪雨、南修-萊羅克颱風、莫蘭蒂颱風、凡那比颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2010.527036276523,
+  "n": 13,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "48": {
+  "year": 2010,
+  "event": "0726豪雨、南修-萊羅克颱風、莫蘭蒂颱風、凡那比颱風、0924豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2010.5544147843943,
+  "n": 2,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "49": {
+  "year": 2010,
+  "event": "0726豪雨、南修-萊羅克颱風、莫蘭蒂颱風、凡那比颱風、0924豪雨、1016豪雨  、1017豪雨_梅姬颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2010.6721423682409,
+  "n": 7,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "50": {
+  "year": 2010,
+  "event": "0924豪雨、1016豪雨  、1017豪雨_梅姬颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2010.9226557152635,
+  "n": 10,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "51": {
+  "year": 2010,
+  "event": "1016豪雨  、1017豪雨_梅姬颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2010.7926078028747,
+  "n": 14,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "52": {
+  "year": 2010,
+  "event": "凡那比颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2010.7091033538672,
+  "n": 6,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "53": {
+  "year": 2010,
+  "event": "凡那比颱風、0924豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2010.7173169062287,
+  "n": 4,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "54": {
+  "year": 2010,
+  "event": "凡那比颱風、0924豪雨、1016豪雨  、1017豪雨_梅姬颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2010.7953456536618,
+  "n": 17,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "55": {
+  "year": 2010,
+  "event": "南修-萊羅克颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2010.6694045174538,
+  "n": 1,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "56": {
+  "year": 2010,
+  "event": "南修-萊羅克颱風、莫蘭蒂颱風、凡那比颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2010.6885694729638,
+  "n": 9,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "57": {
+  "year": 2010,
+  "event": "南修-萊羅克颱風、莫蘭蒂颱風、凡那比颱風、0924豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2010.7022587268993,
+  "n": 5,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "58": {
+  "year": 2010,
+  "event": "南修-萊羅克颱風、莫蘭蒂颱風、凡那比颱風、0924豪雨、1016豪雨  、1017豪雨_梅姬颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2010.7405886379192,
+  "n": 27,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "59": {
+  "year": 2010,
+  "event": "莫蘭蒂颱風、凡那比颱風、0924豪雨、1016豪雨  、1017豪雨_梅姬颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2010.7570157426421,
+  "n": 1,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "60": {
+  "year": 2011,
+  "event": "0719豪雨",
+  "agent": "rainfall",
+  "t_event": 2011.546201232033,
+  "n": 1,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "61": {
+  "year": 2011,
+  "event": "0719豪雨、南瑪都颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2011.6146475017113,
+  "n": 15,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "62": {
+  "year": 2011,
+  "event": "0719豪雨、南瑪都颱風、1001豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2011.6557152635182,
+  "n": 20,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "63": {
+  "year": 2011,
+  "event": "0719豪雨、南瑪都颱風、1001豪雨、1117豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2011.8035592060232,
+  "n": 111,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "64": {
+  "year": 2011,
+  "event": "1001豪雨",
+  "agent": "rainfall",
+  "t_event": 2011.7488021902807,
+  "n": 6,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "65": {
+  "year": 2011,
+  "event": "1001豪雨、1117豪雨",
+  "agent": "rainfall",
+  "t_event": 2011.9568788501026,
+  "n": 49,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "66": {
+  "year": 2011,
+  "event": "1117豪雨",
+  "agent": "rainfall",
+  "t_event": 2011.8774811772757,
+  "n": 72,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "67": {
+  "year": 2011,
+  "event": "南瑪都颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2011.652977412731,
+  "n": 3,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "68": {
+  "year": 2011,
+  "event": "南瑪都颱風、1001豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2011.703627652293,
+  "n": 4,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "69": {
+  "year": 2011,
+  "event": "南瑪都颱風、1001豪雨、1117豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2011.90212183436,
+  "n": 22,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "70": {
+  "year": 2012,
+  "event": "0512豪雨",
+  "agent": "rainfall",
+  "t_event": 2012.362765229295,
+  "n": 32,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "71": {
+  "year": 2012,
+  "event": "0512豪雨、0520豪雨、0610豪雨、泰利颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.4175222450376,
+  "n": 37,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "72": {
+  "year": 2012,
+  "event": "0512豪雨、0520豪雨、0610豪雨、泰利颱風、蘇拉颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.4996577686516,
+  "n": 5,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "73": {
+  "year": 2012,
+  "event": "0512豪雨、0520豪雨、0610豪雨、泰利颱風、蘇拉颱風、天秤颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.5188227241615,
+  "n": 5,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "74": {
+  "year": 2012,
+  "event": "0512豪雨、0520豪雨、0610豪雨、泰利颱風、蘇拉颱風、天秤颱風、0915豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2012.527036276523,
+  "n": 1,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "75": {
+  "year": 2012,
+  "event": "0512豪雨、0520豪雨、0610豪雨、泰利颱風、蘇拉颱風、天秤颱風、0915豪雨、杰拉華颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.5763175906914,
+  "n": 1,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "76": {
+  "year": 2012,
+  "event": "0520豪雨",
+  "agent": "rainfall",
+  "t_event": 2012.384668035592,
+  "n": 16,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "77": {
+  "year": 2012,
+  "event": "0520豪雨、0610豪雨、泰利颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.4339493497605,
+  "n": 152,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "78": {
+  "year": 2012,
+  "event": "0520豪雨、0610豪雨、泰利颱風、蘇拉颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.507871321013,
+  "n": 21,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "79": {
+  "year": 2012,
+  "event": "0520豪雨、0610豪雨、泰利颱風、蘇拉颱風、天秤颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.527036276523,
+  "n": 12,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "80": {
+  "year": 2012,
+  "event": "0520豪雨、0610豪雨、泰利颱風、蘇拉颱風、天秤颱風、0915豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2012.546201232033,
+  "n": 12,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "81": {
+  "year": 2012,
+  "event": "0520豪雨、0610豪雨、泰利颱風、蘇拉颱風、天秤颱風、0915豪雨、杰拉華颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.5886379192334,
+  "n": 4,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "82": {
+  "year": 2012,
+  "event": "0610豪雨、泰利颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.4394250513346,
+  "n": 24,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "83": {
+  "year": 2012,
+  "event": "0610豪雨、泰利颱風、蘇拉颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.5215605749486,
+  "n": 1,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "84": {
+  "year": 2012,
+  "event": "0610豪雨、泰利颱風、蘇拉颱風、天秤颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.5434633812458,
+  "n": 1,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "85": {
+  "year": 2012,
+  "event": "0610豪雨、泰利颱風、蘇拉颱風、天秤颱風、0915豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2012.5598904859685,
+  "n": 2,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "86": {
+  "year": 2012,
+  "event": "0915豪雨",
+  "agent": "rainfall",
+  "t_event": 2012.7077344284737,
+  "n": 19,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "87": {
+  "year": 2012,
+  "event": "0915豪雨、杰拉華颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.7488021902807,
+  "n": 31,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "88": {
+  "year": 2012,
+  "event": "天秤颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.6611909650924,
+  "n": 1,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "89": {
+  "year": 2012,
+  "event": "天秤颱風、0915豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2012.674880219028,
+  "n": 3,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "90": {
+  "year": 2012,
+  "event": "杰拉華颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.7707049965777,
+  "n": 42,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "91": {
+  "year": 2012,
+  "event": "蘇拉颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.5845311430528,
+  "n": 222,
+  "dq": "canonical",
+  "era": "annual_swcb"
+ },
+ "92": {
+  "year": 2012,
+  "event": "蘇拉颱風、天秤颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.6064339493498,
+  "n": 183,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "93": {
+  "year": 2012,
+  "event": "蘇拉颱風、天秤颱風、0915豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2012.6146475017113,
+  "n": 75,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "94": {
+  "year": 2012,
+  "event": "蘇拉颱風、天秤颱風、0915豪雨、杰拉華颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2012.6584531143053,
+  "n": 58,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "95": {
+  "year": 2013,
+  "event": "0327地震",
+  "agent": "earthquake",
+  "t_event": 2013.2340862422998,
+  "n": 2,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "96": {
+  "year": 2013,
+  "event": "0405豪雨",
+  "agent": "rainfall",
+  "t_event": 2013.2587268993839,
+  "n": 24,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "97": {
+  "year": 2013,
+  "event": "0405豪雨、0517豪雨",
+  "agent": "rainfall",
+  "t_event": 2013.3353867214237,
+  "n": 9,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "98": {
+  "year": 2013,
+  "event": "0405豪雨、0517豪雨、蘇力颱風、潭美颱風、康芮颱風、天兔颱風、菲特颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2013.924024640657,
+  "n": 5,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "99": {
+  "year": 2013,
+  "event": "0517豪雨",
+  "agent": "rainfall",
+  "t_event": 2013.3737166324436,
+  "n": 45,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "100": {
+  "year": 2013,
+  "event": "0517豪雨、蘇力颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2013.4202600958247,
+  "n": 6,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "101": {
+  "year": 2013,
+  "event": "0517豪雨、蘇力颱風、潭美颱風、康芮颱風、天兔颱風、菲特颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2013.5571526351814,
+  "n": 4,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "102": {
+  "year": 2013,
+  "event": "0602地震",
+  "agent": "earthquake",
+  "t_event": 2013.4175222450376,
+  "n": 82,
+  "dq": "canonical",
+  "era": "annual_swcb"
+ },
+ "103": {
+  "year": 2013,
+  "event": "天兔颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2013.5352498288844,
+  "n": 3,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "104": {
+  "year": 2013,
+  "event": "康芮颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2013.5352498288844,
+  "n": 8,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "105": {
+  "year": 2013,
+  "event": "潭美颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2013.5352498288844,
+  "n": 10,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "106": {
+  "year": 2013,
+  "event": "潭美颱風、康芮颱風、天兔颱風、菲特颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2013.7022587268993,
+  "n": 33,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "107": {
+  "year": 2013,
+  "event": "蘇力颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2013.527036276523,
+  "n": 182,
+  "dq": "canonical",
+  "era": "annual_swcb"
+ },
+ "108": {
+  "year": 2013,
+  "event": "蘇力颱風、潭美颱風、康芮颱風、天兔颱風、菲特颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2013.7186858316222,
+  "n": 146,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "109": {
+  "year": 2014,
+  "event": "0520豪雨",
+  "agent": "rainfall",
+  "t_event": 2014.381930184805,
+  "n": 21,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "110": {
+  "year": 2014,
+  "event": "0520豪雨、0606豪雨",
+  "agent": "rainfall",
+  "t_event": 2014.3791923340177,
+  "n": 64,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "111": {
+  "year": 2014,
+  "event": "0520豪雨、0606豪雨、麥德姆颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2014.4613278576317,
+  "n": 18,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "112": {
+  "year": 2014,
+  "event": "0520豪雨、0606豪雨、麥德姆颱風、鳳凰颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2014.8528405201916,
+  "n": 3,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "113": {
+  "year": 2014,
+  "event": "0606豪雨",
+  "agent": "rainfall",
+  "t_event": 2014.4284736481861,
+  "n": 10,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "114": {
+  "year": 2014,
+  "event": "0606豪雨、麥德姆颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2014.5352498288844,
+  "n": 5,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "115": {
+  "year": 2014,
+  "event": "鳳凰颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2014.7214236824093,
+  "n": 142,
+  "dq": "canonical",
+  "era": "annual_swcb"
+ },
+ "116": {
+  "year": 2014,
+  "event": "麥德姆颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2014.5571526351814,
+  "n": 177,
+  "dq": "canonical",
+  "era": "annual_swcb"
+ },
+ "117": {
+  "year": 2014,
+  "event": "麥德姆颱風、鳳凰颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2014.6598220396988,
+  "n": 110,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "118": {
+  "year": 2015,
+  "event": "0520豪雨",
+  "agent": "rainfall",
+  "t_event": 2015.381930184805,
+  "n": 70,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "119": {
+  "year": 2015,
+  "event": "0520豪雨\r\n0520豪雨\r\n0520豪雨",
+  "agent": "rainfall",
+  "t_event": 2015.381930184805,
+  "n": 1,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "120": {
+  "year": 2015,
+  "event": "0520豪雨、蓮花颱風、昌鴻颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2015.4777549623545,
+  "n": 3,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "121": {
+  "year": 2015,
+  "event": "杜鵑颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2015.7405886379192,
+  "n": 59,
+  "dq": "canonical",
+  "era": "annual_swcb"
+ },
+ "122": {
+  "year": 2015,
+  "event": "蓮花暨昌鴻颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2015.5352498288844,
+  "n": 4,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "123": {
+  "year": 2015,
+  "event": "蓮花颱風、昌鴻颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2015.5106091718,
+  "n": 43,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "124": {
+  "year": 2015,
+  "event": "蓮花颱風、昌鴻颱風、蘇迪勒颱風、天鵝颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2015.5763175906914,
+  "n": 110,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "125": {
+  "year": 2015,
+  "event": "蓮花颱風、昌鴻颱風、蘇迪勒颱風、天鵝颱風、杜鵑颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2015.6584531143053,
+  "n": 32,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "126": {
+  "year": 2015,
+  "event": "蘇迪勒颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2015.6009582477755,
+  "n": 385,
+  "dq": "canonical",
+  "era": "annual_swcb"
+ },
+ "127": {
+  "year": 2015,
+  "event": "蘇迪勒颱風、天鵝颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2015.6365503080083,
+  "n": 38,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "128": {
+  "year": 2015,
+  "event": "蘇迪勒颱風、天鵝颱風、杜鵑颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2015.7296372347707,
+  "n": 306,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "129": {
+  "year": 2016,
+  "event": "0206地震",
+  "agent": "earthquake",
+  "t_event": 2016.0999315537304,
+  "n": 11,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "130": {
+  "year": 2016,
+  "event": "0611豪雨",
+  "agent": "rainfall",
+  "t_event": 2016.444900752909,
+  "n": 60,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "131": {
+  "year": 2016,
+  "event": "0611豪雨、0629豪雨",
+  "agent": "rainfall",
+  "t_event": 2016.3805612594115,
+  "n": 2,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "132": {
+  "year": 2016,
+  "event": "0611豪雨、0629豪雨、尼伯特颱風、0710豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2016.4202600958247,
+  "n": 419,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "133": {
+  "year": 2016,
+  "event": "0611豪雨、0629豪雨、尼伯特颱風、0710豪雨、莫蘭蒂颱風、馬勒卡颱風、梅姬颱風、艾利颱風、1012豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2016.6173853524983,
+  "n": 182,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "134": {
+  "year": 2016,
+  "event": "0629豪雨、尼伯特颱風、0710豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2016.5106091718,
+  "n": 286,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "135": {
+  "year": 2016,
+  "event": "0629豪雨、尼伯特颱風、0710豪雨、莫蘭蒂颱風、馬勒卡颱風、梅姬颱風、艾利颱風、1012豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2016.7734428473648,
+  "n": 103,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "136": {
+  "year": 2016,
+  "event": "尼伯特颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2016.5379876796715,
+  "n": 27,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "137": {
+  "year": 2016,
+  "event": "尼伯特颱風、0710豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2016.570841889117,
+  "n": 1,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "138": {
+  "year": 2016,
+  "event": "尼伯特颱風、0710豪雨、莫蘭蒂颱風、馬勒卡颱風、梅姬颱風、艾利颱風、1012豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2016.7926078028747,
+  "n": 19,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "139": {
+  "year": 2016,
+  "event": "梅姬暨艾利颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2016.5379876796715,
+  "n": 13,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "140": {
+  "year": 2016,
+  "event": "艾利颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2017.0396988364134,
+  "n": 51,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "141": {
+  "year": 2016,
+  "event": "莫蘭蒂颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2016.5379876796715,
+  "n": 7,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "142": {
+  "year": 2016,
+  "event": "莫蘭蒂颱風、梅姬暨艾利颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2016.5379876796715,
+  "n": 204,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "143": {
+  "year": 2016,
+  "event": "莫蘭蒂颱風、馬勒卡颱風、梅姬颱風、艾利颱風、1012豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2016.8090349075976,
+  "n": 2079,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "144": {
+  "year": 2017,
+  "event": "0516地震",
+  "agent": "earthquake",
+  "t_event": 2017.3709787816565,
+  "n": 3,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "145": {
+  "year": 2017,
+  "event": "0601豪雨",
+  "agent": "rainfall",
+  "t_event": 2017.4147843942505,
+  "n": 310,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "146": {
+  "year": 2017,
+  "event": "0601豪雨、0613豪雨",
+  "agent": "rainfall",
+  "t_event": 2017.3641341546886,
+  "n": 48,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "147": {
+  "year": 2017,
+  "event": "0601豪雨、0613豪雨、尼莎颱風、0801豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2017.4147843942505,
+  "n": 31,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "148": {
+  "year": 2017,
+  "event": "0601豪雨、0613豪雨、尼莎颱風、0801豪雨、1012豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2017.7515400410678,
+  "n": 275,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "149": {
+  "year": 2017,
+  "event": "0601豪雨暨0613豪雨",
+  "agent": "rainfall",
+  "t_event": 2017.5352498288844,
+  "n": 43,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "150": {
+  "year": 2017,
+  "event": "0613豪雨",
+  "agent": "rainfall",
+  "t_event": 2017.447638603696,
+  "n": 57,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "151": {
+  "year": 2017,
+  "event": "0613豪雨、尼莎颱風、0801豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2017.5160848733744,
+  "n": 22,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "152": {
+  "year": 2017,
+  "event": "0613豪雨、尼莎颱風、0801豪雨、1012豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2017.8350444900752,
+  "n": 64,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "153": {
+  "year": 2017,
+  "event": "1011豪雨",
+  "agent": "rainfall",
+  "t_event": 2017.7761806981518,
+  "n": 29,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "154": {
+  "year": 2017,
+  "event": "1012豪雨",
+  "agent": "rainfall",
+  "t_event": 2017.7789185489391,
+  "n": 115,
+  "dq": "mmdd",
+  "era": "annual_swcb"
+ },
+ "155": {
+  "year": 2017,
+  "event": "尼莎暨海棠颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2017.5352498288844,
+  "n": 8,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "156": {
+  "year": 2017,
+  "event": "尼莎颱風、0801豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2017.539356605065,
+  "n": 8,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "157": {
+  "year": 2017,
+  "event": "尼莎颱風、0801豪雨、1012豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2017.8528405201916,
+  "n": 115,
+  "dq": "midpoint",
+  "era": "annual_swcb"
+ },
+ "158": {
+  "year": 2017,
+  "event": "尼莎颱風暨海棠颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2017.5352498288844,
+  "n": 11,
+  "dq": "yearmid",
+  "era": "annual_swcb"
+ },
+ "159": {
+  "year": 2018,
+  "event": "0206花蓮地震",
+  "agent": "earthquake",
+  "t_event": 2018.0999315537304,
+  "n": 5,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "160": {
+  "year": 2018,
+  "event": "0613暨0619豪雨",
+  "agent": "rainfall",
+  "t_event": 2018.444900752909,
+  "n": 1,
+  "dq": "midpoint",
+  "era": "event_ardswc"
+ },
+ "161": {
+  "year": 2018,
+  "event": "0613暨0619豪雨暨瑪莉亞颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2018.485968514716,
+  "n": 12,
+  "dq": "midpoint",
+  "era": "event_ardswc"
+ },
+ "162": {
+  "year": 2018,
+  "event": "0823熱帶低壓",
+  "agent": "rainfall",
+  "t_event": 2018.6420260095824,
+  "n": 40,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "163": {
+  "year": 2018,
+  "event": "0909熱帶低壓",
+  "agent": "rainfall",
+  "t_event": 2018.6885694729638,
+  "n": 1,
+  "dq": "mmdd",
+  "era": "event_ardswc"
+ },
+ "164": {
+  "year": 2018,
+  "event": "0909熱帶低壓暨山竹颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2018.7132101300479,
+  "n": 10,
+  "dq": "midpoint",
+  "era": "event_ardswc"
+ },
+ "165": {
+  "year": 2018,
+  "event": "丹大溪堰塞湖",
+  "agent": "other",
+  "t_event": 2018.0013689253935,
+  "n": 1,
+  "dq": "midpoint",
+  "era": "event_ardswc"
+ },
+ "166": {
+  "year": 2018,
+  "event": "瑪莉亞颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2018.54893908282,
+  "n": 1,
+  "dq": "midpoint",
+  "era": "event_ardswc"
+ },
+ "167": {
+  "year": 2018,
+  "event": "鹿場堰塞湖",
+  "agent": "other",
+  "t_event": 2018.2477754962354,
+  "n": 2,
+  "dq": "midpoint",
+  "era": "event_ardswc"
+ },
+ "168": {
+  "year": 2019,
+  "event": "0418地震",
+  "agent": "earthquake",
+  "t_event": 2019.2943189596167,
+  "n": 28,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "169": {
+  "year": 2019,
+  "event": "0428豪雨",
+  "agent": "rainfall",
+  "t_event": 2019.321697467488,
+  "n": 5,
+  "dq": "mmdd",
+  "era": "event_ardswc"
+ },
+ "170": {
+  "year": 2019,
+  "event": "0518及0611豪雨",
+  "agent": "rainfall",
+  "t_event": 2019.3764544832306,
+  "n": 45,
+  "dq": "mmdd",
+  "era": "event_ardswc"
+ },
+ "171": {
+  "year": 2019,
+  "event": "0627高雄茂林山崩",
+  "agent": "unknown",
+  "t_event": 2019.485968514716,
+  "n": 2,
+  "dq": "mmdd",
+  "era": "event_ardswc"
+ },
+ "172": {
+  "year": 2019,
+  "event": "0808地震、利奇馬颱風、白鹿颱風",
+  "agent": "earthquake",
+  "t_event": 2019.6173853524983,
+  "n": 3,
+  "dq": "midpoint",
+  "era": "event_ardswc"
+ },
+ "173": {
+  "year": 2019,
+  "event": "丹娜絲颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2019.5544147843943,
+  "n": 2,
+  "dq": "midpoint",
+  "era": "event_ardswc"
+ },
+ "174": {
+  "year": 2019,
+  "event": "利奇馬颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2019.6036960985625,
+  "n": 8,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "175": {
+  "year": 2019,
+  "event": "利奇馬颱風、0815豪雨、白鹿颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2019.4175222450376,
+  "n": 19,
+  "dq": "midpoint",
+  "era": "event_ardswc"
+ },
+ "176": {
+  "year": 2019,
+  "event": "白鹿颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2019.6447638603697,
+  "n": 25,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "177": {
+  "year": 2020,
+  "event": "0521暨0528豪雨",
+  "agent": "rainfall",
+  "t_event": 2020.5379876796715,
+  "n": 23,
+  "dq": "yearmid",
+  "era": "event_ardswc"
+ },
+ "178": {
+  "year": 2021,
+  "event": "0621豪雨",
+  "agent": "rainfall",
+  "t_event": 2021.469541409993,
+  "n": 8,
+  "dq": "mmdd",
+  "era": "event_ardswc"
+ },
+ "179": {
+  "year": 2021,
+  "event": "0731豪雨暨盧碧颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2021.5817932922655,
+  "n": 331,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "180": {
+  "year": 2021,
+  "event": "圓規颱風暨1013豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2021.7816563997262,
+  "n": 41,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "181": {
+  "year": 2021,
+  "event": "彩雲颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2021.422997946612,
+  "n": 20,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "182": {
+  "year": 2021,
+  "event": "烟花颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2021.5571526351814,
+  "n": 9,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "183": {
+  "year": 2021,
+  "event": "璨樹颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2021.694045174538,
+  "n": 2,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "184": {
+  "year": 2022,
+  "event": "0323地震",
+  "agent": "earthquake",
+  "t_event": 2022.2231348391513,
+  "n": 3,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "185": {
+  "year": 2022,
+  "event": "0918地震",
+  "agent": "earthquake",
+  "t_event": 2022.7132101300479,
+  "n": 96,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "186": {
+  "year": 2022,
+  "event": "1007豪雨、尼莎颱風暨1022豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2022.5352498288844,
+  "n": 58,
+  "dq": "yearmid",
+  "era": "event_ardswc"
+ },
+ "187": {
+  "year": 2022,
+  "event": "1030豪雨",
+  "agent": "rainfall",
+  "t_event": 2022.8281998631076,
+  "n": 3,
+  "dq": "mmdd",
+  "era": "event_ardswc"
+ },
+ "188": {
+  "year": 2022,
+  "event": "軒嵐諾暨梅花颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2022.5352498288844,
+  "n": 13,
+  "dq": "yearmid",
+  "era": "event_ardswc"
+ },
+ "189": {
+  "year": 2023,
+  "event": "卡努颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2023.5872689938399,
+  "n": 1289,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "190": {
+  "year": 2023,
+  "event": "小犬颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2023.7570157426421,
+  "n": 23,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "191": {
+  "year": 2023,
+  "event": "杜蘇芮颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2023.5653661875428,
+  "n": 201,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "192": {
+  "year": 2023,
+  "event": "海葵颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2023.6721423682409,
+  "n": 581,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "193": {
+  "year": 2024,
+  "event": "0403花蓮地震",
+  "agent": "earthquake",
+  "t_event": 2024.2559890485968,
+  "n": 2641,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "194": {
+  "year": 2024,
+  "event": "0629豪雨",
+  "agent": "rainfall",
+  "t_event": 2024.4941820670774,
+  "n": 178,
+  "dq": "mmdd",
+  "era": "event_ardswc"
+ },
+ "195": {
+  "year": 2024,
+  "event": "1023豪雨",
+  "agent": "rainfall",
+  "t_event": 2024.8117727583847,
+  "n": 7,
+  "dq": "mmdd",
+  "era": "event_ardswc"
+ },
+ "196": {
+  "year": 2024,
+  "event": "1112豪雨",
+  "agent": "rainfall",
+  "t_event": 2024.8665297741272,
+  "n": 2,
+  "dq": "mmdd",
+  "era": "event_ardswc"
+ },
+ "197": {
+  "year": 2024,
+  "event": "凱米颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2024.5626283367556,
+  "n": 2918,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "198": {
+  "year": 2024,
+  "event": "天兔颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2024.8747433264887,
+  "n": 2,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "199": {
+  "year": 2024,
+  "event": "山陀兒颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2024.7570157426421,
+  "n": 738,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "200": {
+  "year": 2024,
+  "event": "康芮颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2024.8336755646817,
+  "n": 1829,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "201": {
+  "year": 2025,
+  "event": "0121嘉義地震",
+  "agent": "earthquake",
+  "t_event": 2025.0561259411363,
+  "n": 29,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "202": {
+  "year": 2025,
+  "event": "0613豪雨",
+  "agent": "rainfall",
+  "t_event": 2025.447638603696,
+  "n": 29,
+  "dq": "mmdd",
+  "era": "event_ardswc"
+ },
+ "203": {
+  "year": 2025,
+  "event": "0728豪雨",
+  "agent": "rainfall",
+  "t_event": 2025.570841889117,
+  "n": 1765,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "204": {
+  "year": 2025,
+  "event": "1020豪雨",
+  "agent": "rainfall",
+  "t_event": 2025.8008213552362,
+  "n": 11,
+  "dq": "mmdd",
+  "era": "event_ardswc"
+ },
+ "205": {
+  "year": 2025,
+  "event": "丹娜絲颱風、薇帕颱風、0721豪雨",
+  "agent": "typhoon_rain",
+  "t_event": 2025.5106091718,
+  "n": 117,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "206": {
+  "year": 2025,
+  "event": "楊柳颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2025.6146475017113,
+  "n": 70,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "207": {
+  "year": 2025,
+  "event": "樺加沙颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2025.7241615331964,
+  "n": 636,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ },
+ "208": {
+  "year": 2025,
+  "event": "鳳凰颱風",
+  "agent": "typhoon_rain",
+  "t_event": 2025.8637919233402,
+  "n": 17,
+  "dq": "canonical",
+  "era": "event_ardswc"
+ }
+}

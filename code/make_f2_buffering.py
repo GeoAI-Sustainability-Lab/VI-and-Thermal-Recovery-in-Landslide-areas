@@ -1,4 +1,4 @@
-"""Fig. 3 (v23): the buffering baseline, answering one question - how much
+"""Figure: the buffering baseline, answering one question - how much
 cooler is summer daytime LST for every extra metre of canopy in intact forest?
 (a) LST relative to a 25 m canopy at the same elevation and terrain, against
 canopy height, over the full 400k-pixel intact-forest sample (density) with the
@@ -96,13 +96,6 @@ GREY = LinearSegmentedColormap.from_list(
 hb = ax.hexbin(d.chm[sel], d.anom[sel], gridsize=(96, 66), cmap=GREY,
                norm=LogNorm(vmin=1, vmax=4000), mincnt=1, linewidths=0,
                rasterized=True)
-# horizontal colourbar inside the panel, under the legend: the panel keeps the
-# full figure width instead of giving a column to the bar
-cax = ax.inset_axes([0.075, 0.885, 0.20, 0.026])
-cb = fig.colorbar(hb, cax=cax, orientation="horizontal")
-cb.ax.tick_params(labelsize=8.3, length=2, pad=1.5)
-ax.text(0.295, 0.898, "intact-forest pixels per cell", transform=ax.transAxes,
-        fontsize=8.3, ha="left", va="center", color="#333333")
 e = np.arange(8, 50.5, 1.0)
 c, m, lo_, hi_ = binned(d.chm[sel].values, d.anom[sel].values, e)
 ax.fill_between(c, lo_, hi_, color=WONG["vermillion"], alpha=0.30, lw=0)
@@ -120,7 +113,20 @@ print("local slopes:", {k: round(v, 2) for k, v in BAND_SL.items()})
 ax.set_xlim(8, 50); ax.set_ylim(-6.4, 6.4)
 ax.tick_params(labelbottom=False)          # x-axis carried by the derivative panel
 ax.set_ylabel("Summer LST relative to a 25 m canopy\nat the same elevation and terrain (°C)")
-ax.legend(frameon=False, fontsize=8.3, loc="upper left", borderaxespad=0.4)
+_LEG_A = ax.legend(frameon=False, fontsize=8.3, loc="upper left",
+                   borderaxespad=0.4)
+# 面板 a 左上角由上而下是：圖例、色階條標籤、色階條。先量出圖例文字的左緣，
+# 再把標籤與色階條都對到同一個 x，三者才會切齊。色階條放在面板內，
+# 版面就不必為它讓出一整欄。
+fig.canvas.draw()
+_x0 = min(t.get_window_extent(renderer=fig.canvas.get_renderer()).x0
+          for t in _LEG_A.get_texts())
+_XA = ax.transAxes.inverted().transform((_x0, 0))[0]
+ax.text(_XA, 0.905, "intact-forest pixels per cell", transform=ax.transAxes,
+        fontsize=8.3, ha="left", va="center", color="#333333")
+cax = ax.inset_axes([_XA, 0.845, 0.20, 0.026])
+cb = fig.colorbar(hb, cax=cax, orientation="horizontal")
+cb.ax.tick_params(labelsize=8.3, length=2, pad=1.5)
 ax.set_title("a  Taller canopy, cooler surface", loc="left",
              fontweight="bold", fontsize=9.5)
 ax.spines[["top", "right"]].set_visible(False)

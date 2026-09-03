@@ -1,0 +1,85 @@
+{
+ "grid": {
+  "width": 7064,
+  "height": 12923,
+  "crs": "EPSG:3826",
+  "res_m": 30.0,
+  "lon": [
+   119.97,
+   122.08
+  ],
+  "lat": [
+   21.84,
+   25.36
+  ]
+ },
+ "forest4_polygons": 348617,
+ "catalogue": {
+  "total": 43780,
+  "n_codes": 208,
+  "date_quality": {
+   "yearmid": 10429,
+   "mmdd": 1224,
+   "midpoint": 16652,
+   "canonical": 15475
+  },
+  "agent": {
+   "typhoon_rain": 37620,
+   "rainfall": 3251,
+   "unknown": 3,
+   "earthquake": 2903,
+   "other": 3
+  },
+  "era": {
+   "annual_swcb": 29880,
+   "event_ardswc": 13900
+  },
+  "earthquake_dates": [
+   "0121",
+   "0206",
+   "0323",
+   "0327",
+   "0403",
+   "0418",
+   "0516",
+   "0602",
+   "0808",
+   "0918"
+  ],
+  "earthquake_top": {
+   "event": "0403花蓮地震",
+   "n": 2641
+  }
+ },
+ "intact_sample": {
+  "drawn": 400000,
+  "band_0_3600": 399990,
+  "slice_250m": 399265,
+  "fig3a_plotted": 394865,
+  "fig3a_frac": 0.98897975029116,
+  "tall_high_band_n": 6471,
+  "tall_high_band_elev_p10": 2536.088134765625,
+  "tall_high_band_elev_p90": 2933.199951171875,
+  "slice_lapse_median": 1.1747094290641973,
+  "slice_lapse_max": 2.5324637553243527,
+  "n_slices": 13
+ },
+ "curve": {
+  "anom_at_15": 1.4173252672042835,
+  "anom_ge40_mean": -0.6391553177311038,
+  "anom_at_40": -0.5448068653900129
+ },
+ "shap_panel": {
+  "n_rows": 6000,
+  "n_plotted": 4000,
+  "n_features": 6,
+  "n_shown": 4
+ },
+ "mixed_fit": {
+  "tau_thermal": 28.977917934713812,
+  "tau_greenness": 26.331076738495042,
+  "ratio": 1.1005215708611409,
+  "rows": 115127,
+  "definition": "事件崩塌與全部年損失斑塊合併之分箱指數擬合，設定同 step16"
+ }
+}

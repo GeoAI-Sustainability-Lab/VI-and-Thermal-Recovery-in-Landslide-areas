@@ -1,4 +1,4 @@
-"""Fig. 1 (v24) — method flow chart, drawn to formal flow-chart conventions.
+"""Figure — method flow chart, drawn to formal flow-chart conventions.
 
 Shape carries the meaning, so colour does not: parallelograms are data sources,
 rectangles are processing steps, and every box has the same size. Boxes sit on
@@ -34,7 +34,7 @@ EC = "#333333"          # one outline colour for every box
 FC_PROC = "#FFFFFF"     # process
 FC_DATA = "#ECECEC"     # data source
 TXT = "#111111"
-FS = 8.3
+FS = 10.5        # 放大字級；下方的溢出檢核會確認文字不會碰到框線
 
 fig = plt.figure(figsize=(183 * MM, 152 * MM))
 ax = fig.add_axes([0, 0, 1, 1])
@@ -49,19 +49,25 @@ MID = {"L": 35.0, "R": 65.0}         # midpoints of the column pairs
 ROW = [102.0, 88.0, 74.0, 60.0, 46.0, 32.0]   # evenly spaced
 
 
+LABELS = []          # (text artist, 該框可用之內寬與內高) 供溢出檢核
+
+
 def rect(x, y, text):
     ax.add_patch(Rectangle((x - HW, y - HH), W, H, fc=FC_PROC, ec=EC, lw=1.0,
                            zorder=3))
-    ax.text(x, y, text, ha="center", va="center", fontsize=FS, color=TXT,
-            zorder=4, linespacing=1.35)
+    t = ax.text(x, y, text, ha="center", va="center", fontsize=FS, color=TXT,
+                zorder=4, linespacing=1.25)
+    LABELS.append((t, W, H))
 
 
 def data(x, y, text):
     pts = [(x - HW + SKEW, y + HH), (x + HW + SKEW, y + HH),
            (x + HW - SKEW, y - HH), (x - HW - SKEW, y - HH)]
     ax.add_patch(Polygon(pts, closed=True, fc=FC_DATA, ec=EC, lw=1.0, zorder=3))
-    ax.text(x, y, text, ha="center", va="center", fontsize=FS, color=TXT,
-            zorder=4, linespacing=1.35)
+    t = ax.text(x, y, text, ha="center", va="center", fontsize=FS, color=TXT,
+                zorder=4, linespacing=1.25)
+    # 平行四邊形上下窄，可用內寬扣掉兩側斜切
+    LABELS.append((t, W - 2 * SKEW, H))
 
 
 def ortho(points, r=0.0):
@@ -142,6 +148,22 @@ for c in (COL["L"], COL["R"]):
     line([(c, ROW[4] - HH), (c, BUS3)])
 line([(COL["L"], BUS3), (COL["R"], BUS3)])
 arrow([(COL["M"], ROW[4] - HH), (COL["M"], ROW[5] + HH)])
+
+# ---------------- 溢出檢核：文字不得碰到框線 ----------------
+# 放大字級最容易出的問題就是某一格的長標籤頂到邊。這裡實際量測每個標籤的
+# 外框，換算回資料座標後留 8% 邊距，任一格超出就直接讓組圖失敗。
+fig.canvas.draw()
+inv = ax.transData.inverted()
+_worst = 0.0
+for t, wlim, hlim in LABELS:
+    bb = t.get_window_extent(renderer=fig.canvas.get_renderer())
+    (x0, y0), (x1, y1) = inv.transform([(bb.x0, bb.y0), (bb.x1, bb.y1)])
+    fw, fh = abs(x1 - x0) / wlim, abs(y1 - y0) / hlim
+    _worst = max(_worst, fw, fh)
+    assert fw <= 0.92 and fh <= 0.92, (
+        f"字級 {FS} pt 下「{t.get_text()[:24]}」佔框寬 {fw:.0%}、框高 {fh:.0%}，"
+        "已逼近框線，請縮小字級或加寬方框")
+print(f"框內文字最大占比 {_worst:.0%}（上限 92%）")
 
 fig.savefig(f"{F}/F2_workflow.pdf", bbox_inches="tight")
 fig.savefig(f"{F}/F2_workflow.png", bbox_inches="tight", dpi=500)

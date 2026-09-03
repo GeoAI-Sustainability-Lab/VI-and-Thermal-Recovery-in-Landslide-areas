@@ -1,5 +1,9 @@
 # VI and Thermal Recovery in Landslide Areas
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22281543.svg)](https://doi.org/10.5281/zenodo.22281543)
+
+Version 1.1.0. Cite as `doi:10.5281/zenodo.22281543` (all versions) — see `CITATION.cff`.
+
 Data and code for a satellite-scale test of whether land surface temperature (LST) recovers
 as fast as greenness after forest disturbance, in the montane forests of Taiwan, 2013–2026.
 
@@ -15,18 +19,20 @@ difference. What is measured is the functional gap relative to normal forest in 
 | --- | --- | --- | --- |
 | Summer daytime LST per +10 m of intact canopy | −0.48 ± 0.03 °C, saturating above 30 m | `step15_gradient_check.py` | `gradient_check.json` → `narrow_band.slope` |
 | Elevation trend of that sensitivity, canopy-height support controlled | p = 0.29 | `step15_gradient_check.py` | `gradient_check.json` → `narrow_band.trend_p` |
-| Net thermal shock, difference-in-differences | +0.82 to +2.31 °C | `step08n_did_uniform.py` | `results2.json` → `did_uniform` |
+| Net thermal shock, difference-in-differences, well-sampled cohorts | +0.82 to +2.31 °C | `step08e_results2.py` | `results2.json` → `did_cohorts` |
+| Net thermal shock by trigger, elevation and area | table 3 of the paper | `step08n_did_uniform.py` | `results2.json` → `did_uniform` |
 | Pre-event coefficients, seven summers pooled | −0.04 °C | `step20_eventstudy.py` | `eventstudy.json` → `lst_lead_pooled` |
 | Thermal recovery constant τ_LST | 16.84 yr | `step16_recovery_clocks.py` | `recovery_clocks.json` → `thermal.tau` |
 | Greenness recovery constant τ_NDVI | 14.66 yr | `step16_recovery_clocks.py` | `recovery_clocks.json` → `greenness.tau` |
-| τ ratio | 1.147 (95% CI 1.089–1.205) | `step16_recovery_clocks.py` | `recovery_clocks.json` → `ratio` |
+| τ ratio = τ_LST / τ_NDVI | 1.149 (patch-bootstrap 95% CI 1.089–1.205; `ratio.mean` in the file is the bootstrap mean, 1.147) | `step16_recovery_clocks.py` | `recovery_clocks.json` → `thermal.tau`, `greenness.tau`, `ratio.ci` |
 | Pooled thermal decline reproduced within patches | 74% | `step21_within_patch.py` | `within_patch.json` → `thermal.frac` |
-| τ ratio by scar size, < 2 ha / ≥ 10 ha | 1.06 (CI spans 1) / 1.46 | `step17_strata_curves.py` | `strata_curves.json` |
+| τ ratio by scar size, < 2 ha / ≥ 10 ha | 1.05 (CI spans 1) / 1.45, quotients of the fitted τ | `step17_strata_curves.py` | `strata_curves.json` |
 | τ_LST above 2,000 m | 23.6 yr | `step17_strata_curves.py` | `strata_curves.json` → `gt2000` |
 | Morakot cohort | 2,398 patches | `step18_morakot.py` | `morakot.json` |
 | Per-trigger patch counts and largest single events | — | `step27_table2.py` | `table2_agents.json` |
 | Robustness across epoch coverage eras | τ stable | `step22_epoch_era.py` | `epoch_era.json` |
-| Disturbed patches analysed | 23,526 | `step05c_deltas_multi.py` | `results2.json` → `n_patches` |
+| Disturbed patches analysed | 23,526 (the patch table has 23,527 rows; the extra row is one fire-record patch that no statistic uses) | `step05c_deltas_multi.py` | `results2.json` → `n_event` + `n_hansen` |
+| Catalogue records by dating quality and trigger; intact-forest sample populations | 43,780; 400,000 drawn / 399,265 in the 250 m-slice analysis | `step28_descriptive_meta.py` | `grid_meta.json` |
 | Landsat scenes / summer epochs | 792 / 14 (2013–2026) | acquisition | `data/acc/*_items.json` |
 
 ---
@@ -47,6 +53,8 @@ repository does not track.
 ---
 
 ## 3. Quick check, three minutes
+
+Release 1.0.0 on Zenodo contains code and documentation only; the tables arrived with 1.1.0. Use 1.1.0 or later for any recomputation.
 
 ```bash
 python3 -m pip install -r requirements.txt
@@ -83,6 +91,7 @@ result file.
 | `step08o_area_official.py` | `chrono2_long.parquet` | `results2.json` (area strata) | ~1 min |
 | `step13g_s1_analysis.py` | `s1_pilot_rows.parquet` | `s1_pilot.json` | ~5 s |
 | `step26_morakot_early.py` | `l57_deltas.parquet` | `morakot_early.json` | ~5 s |
+| `step28_descriptive_meta.py` | `event_codes2.json`, `buffering_sample.parquet`, `chrono2_long.parquet`, `shap_buffering.parquet` | `grid_meta.json` | ~20 s |
 
 Run any of them directly:
 
@@ -212,6 +221,13 @@ Per-scene case series, 2000–2026: `date`, `platform`, patch and control means
 Sentinel-1 structure pilot: `pid`, `year_obs`, `age`, `dvh_db`, `dvv_db` (patch minus control
 γ⁰ backscatter, dB, VH and VV).
 
+### `data/event_codes2.json` — 208 harmonised catalogue event codes
+
+Per event code: `event` name as recorded, `year`, `agent` (`typhoon_rain`, `rainfall`,
+`earthquake`, `other`, `unknown`), `t_event` harmonised decimal date, `dq` dating quality
+(`canonical`, `mmdd`, `midpoint`, `yearmid`), `era` (`annual_swcb` 2004–2017, `event_ardswc`
+2018 on) and `n` polygons. This is the summary that `step03c` produces; no geometry.
+
 ### `data/s3_daynight_cells.parquet` — 8,133 cells
 
 Sentinel-3 SLSTR summer 2025 on a 0.02° grid whose origin is 119.9 °E, 25.4 °N, 110 columns
@@ -236,7 +252,7 @@ Model inputs and their SHAP values, one column pair per feature.
 `eventstudy.json` leads and lags · `within_patch.json` patch fixed-effect decomposition ·
 `morakot.json`, `morakot_early.json` the largest single event · `epoch_era.json` coverage-era
 robustness · `table2_agents.json` per-trigger counts and largest events ·
-`results.json`, `results2.json` the aggregate statistics · `s1_pilot.json` structure clock ·
+`results.json`, `results2.json` the aggregate statistics · `grid_meta.json` the descriptive counts quoted in the text (catalogue breakdown, sample populations, curve anchors, mixed-source fit) · `s1_pilot.json` structure clock ·
 `l57_transfer.json` cross-sensor transfer · `median_validation.json`, `chm2_compare.json`,
 `harshness_check.json`, `s3_results.json` validity checks ·
 `DATA_PROVENANCE.json` sources, URLs, retrieval times and file checksums

@@ -129,8 +129,11 @@ for (e, lab), yy in zip(rows, ypos):
     r = e.get("ratio", {})
     if r.get("mean") and e["thermal"]["tau"] and e["greenness"]["tau"]:
         star = "*" if (r["p_gt1"] or 0) >= 0.95 else ""
+        # printed ratio = quotient of the two fitted tau (verifiable from the table);
+        # the bootstrap supplies only the star (P(ratio > 1) >= 0.95)
+        _pr = e["thermal"]["tau"] / e["greenness"]["tau"]
         ax.plot([], [])
-        ax.text(X_RATIO, yy, f"×{r['mean']:.2f}{star}", fontsize=8.3, va="center",
+        ax.text(X_RATIO, yy, f"×{_pr:.2f}{star}", fontsize=8.3, va="center",
                 ha="center", fontweight="bold" if star else "normal")
     ax.text(X_NPAT, yy, f"{e['n_patches']:,}", fontsize=8.3, va="center",
             ha="center", color="#555555")

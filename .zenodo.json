@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
   "title": "VI and Thermal Recovery in Landslide Areas: data and code",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "language": "eng",
   "license": "mit",
   "access_right": "open",
@@ -12,7 +12,7 @@
       "affiliation": "Department of Forestry, National Chung Hsing University; Innovation and Development Center of Sustainable Agriculture (SMARTer), Taichung, Taiwan"
     }
   ],
-  "description": "<p>Pipeline and model-ready data for a satellite-scale test of whether land surface temperature (LST) recovers as fast as greenness after forest disturbance in the montane forests of Taiwan.</p><p>Every estimate is defined as a disturbed patch minus terrain-matched intact forest within the same summer composite, so interannual climate and long-term warming cancel in the difference. Fourteen Landsat 8/9 summer composites (2013-2026, 792 scenes) and Taiwan's official event-based landslide catalogue give 23,526 disturbed patches. Intact canopy cools summer daytime LST by 0.48 +/- 0.03 &deg;C per additional 10 m of height and saturates above 30 m. The net thermal shock is +0.82 to +2.31 &deg;C. Thermal recovery is slower than greenness recovery, tau_LST 16.8 yr against tau_NDVI 14.7 yr, a ratio of 1.15 (95% CI 1.09-1.20) that exceeds one in every data split; 74% of the pooled thermal decline is reproduced within patches. The lag scales with scar size, from a ratio of 1.06 below 2 ha, where the two clocks are inseparable, to 1.46 above 10 ha.</p><p>This deposit holds the analysis pipeline and the point and tabular data extracted from the source datasets, with every coordinate column removed. <code>verify_numbers.py</code> recomputes the headline statistics from those tables and compares them with the released values. No satellite imagery and no rendered figures are included; each source archive is documented in the README and in outputs/DATA_PROVENANCE.json with access URLs, retrieval times and file checksums. The event-based landslide catalogue is not redistributed, because redistribution rights do not belong to this study.</p>",
+  "description": "<p>Pipeline and model-ready data for a satellite-scale test of whether land surface temperature (LST) recovers as fast as greenness after forest disturbance in the montane forests of Taiwan.</p><p>Every estimate is defined as a disturbed patch minus terrain-matched intact forest within the same summer composite, so interannual climate and long-term warming cancel in the difference. Fourteen Landsat 8/9 summer composites (2013-2026, 792 scenes) and Taiwan's official event-based landslide catalogue give 23,526 disturbed patches. Intact canopy cools summer daytime LST by 0.48 +/- 0.03 &deg;C per additional 10 m of height and saturates above 30 m. The net thermal shock is +0.82 to +2.31 &deg;C in the well-sampled cohorts. Thermal recovery is slower than greenness recovery, tau_LST 16.8 yr against tau_NDVI 14.7 yr, a ratio of 1.15 (95% CI 1.09-1.20) whose point estimate is above one in every fitted stratum; 74% of the pooled thermal decline is reproduced within patches. The lag scales with scar size, from a ratio of 1.05 below 2 ha, where the two clocks are inseparable, to 1.45 above 10 ha. The tau ratio is the quotient of the two fitted tau; the patch-level bootstrap supplies its interval.</p><p>This deposit holds the analysis pipeline and the point and tabular data extracted from the source datasets, with every coordinate column removed. <code>verify_numbers.py</code> recomputes the headline statistics from those tables and compares them with the released values. No satellite imagery and no rendered figures are included; each source archive is documented in the README and in outputs/DATA_PROVENANCE.json with access URLs, retrieval times and file checksums. The event-based landslide catalogue is not redistributed, because redistribution rights do not belong to this study.</p>",
   "keywords": [
     "land surface temperature",
     "canopy height",
@@ -24,5 +24,12 @@
     "Taiwan",
     "reproducibility"
   ],
-  "notes": "Data and derived results are licensed CC BY 4.0; see LICENSE-DATA. Third-party inputs keep their own licences, listed in README.md and outputs/DATA_PROVENANCE.json."
+  "notes": "Data and derived results are licensed CC BY 4.0; see LICENSE-DATA. Third-party inputs keep their own licences, listed in README.md and outputs/DATA_PROVENANCE.json.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/GeoAI-Sustainability-Lab/VI-and-Thermal-Recovery-in-Landslide-areas",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
 }

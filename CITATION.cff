@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this data or code, please cite it as below."
+message: "If you use this data or code, please cite it as below. The DOI 10.5281/zenodo.22281543 resolves to the latest version; version DOIs are listed on the Zenodo record."
 type: software
 title: "VI and Thermal Recovery in Landslide Areas: data and code"
 abstract: >-
@@ -16,10 +16,11 @@ authors:
     affiliation: >-
       Department of Forestry, National Chung Hsing University; Innovation and Development
       Center of Sustainable Agriculture (SMARTer), Taichung, Taiwan
-version: "1.0.0"
-date-released: "2026-08-31"
+version: "1.1.0"
+date-released: "2026-09-03"
 license: MIT
 license-url: "https://opensource.org/licenses/MIT"
+doi: 10.5281/zenodo.22281543
 repository-code: "https://github.com/GeoAI-Sustainability-Lab/VI-and-Thermal-Recovery-in-Landslide-areas"
 keywords:
   - land surface temperature

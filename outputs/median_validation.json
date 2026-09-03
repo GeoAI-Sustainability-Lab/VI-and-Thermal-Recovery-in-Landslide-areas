@@ -1,0 +1,29 @@
+{
+ "west_lowland": {
+  "n_scenes": 29,
+  "n_px": 65536,
+  "mean_minus_median_bias": -0.6711134910583496,
+  "mean_minus_median_rmse": 0.9855265617370605,
+  "prod_minus_median_bias": -0.6709557771682739,
+  "prod_minus_median_rmse": 0.9856784343719482,
+  "median_mean_r": 0.9784355980969012
+ },
+ "central_mid": {
+  "n_scenes": 31,
+  "n_px": 16323,
+  "mean_minus_median_bias": -2.4402430057525635,
+  "mean_minus_median_rmse": 2.8113486766815186,
+  "prod_minus_median_bias": -2.4408118724823,
+  "prod_minus_median_rmse": 2.812622547149658,
+  "median_mean_r": 0.9538677670006381
+ },
+ "east_steep": {
+  "n_scenes": 7,
+  "n_px": 60552,
+  "mean_minus_median_bias": -0.45527830719947815,
+  "mean_minus_median_rmse": 1.2318841218948364,
+  "prod_minus_median_bias": -0.45627284049987793,
+  "prod_minus_median_rmse": 1.2318106889724731,
+  "median_mean_r": 0.9387260531703001
+ }
+}

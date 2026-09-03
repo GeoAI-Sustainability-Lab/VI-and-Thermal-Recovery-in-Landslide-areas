@@ -44,23 +44,25 @@ fvh = S1["fit_vh_xmor"]
 b = fvh["bins"]
 ax.errorbar(b["center"], b["mean"], yerr=1.96 * np.array(b["se"]), fmt="s", ms=2.8,
             color=WONG["blue"], capsize=1.6, lw=0.8,
-            label="VH, all cohorts excl. Morakot")
+            label="VH bins, excl. Morakot")
 tt = np.linspace(0.6, 21, 150)
 ax.plot(tt, fvh["A"] * np.exp(-tt / fvh["tau"]), color=WONG["blue"], lw=1.3,
-        label=f"fit τ = {fvh['tau']:.1f} ± {fvh['tau_se']:.1f} yr")
+        label=f"VH fit τ = {fvh['tau']:.1f} ± {fvh['tau_se']:.1f} yr")
 fvv = S1.get("fit_vv_xmor")
 if fvv:
     ax.plot(tt, fvv["A"] * np.exp(-tt / fvv["tau"]), color=WONG["skyblue"], lw=0.9,
             ls="--", alpha=0.9, label=f"VV fit τ = {fvv['tau']:.0f} ± {fvv['tau_se']:.0f} yr")
 ax.errorbar(mb.index, mb["mean"], yerr=1.96 * mb["sem"], fmt="D", ms=3.2,
             mfc="none", color=PURPLE, capsize=1.6, lw=0.8,
-            label="Morakot 2009 cohort")
+            label="Morakot 2009")
 ax.axhline(0, color="grey", lw=0.6, ls=":")
 ax.set_xlabel("Years since event")
 ax.set_ylabel(r"$\Delta\gamma^0$ patch − control (dB)")
-ax.set_ylim(-3.4, 0.6)
-ax.legend(frameon=False, fontsize=8.3, loc="upper left",
-          bbox_to_anchor=(0.0, 0.82), labelspacing=0.35, handlelength=1.6)
+# 圖例壓到資料上：改為頂端留白帶、兩欄排列，並縮短標籤
+ax.set_ylim(-3.4, 1.45)
+ax.legend(frameon=False, fontsize=8.3, loc="upper left", ncol=2,
+          columnspacing=0.9, handlelength=1.4, labelspacing=0.3,
+          borderaxespad=0.2)
 ax.set_title("a  Radar backscatter recovery",
              loc="left", fontweight="bold", fontsize=9.5)
 ax.spines[["top", "right"]].set_visible(False)
