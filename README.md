@@ -280,8 +280,6 @@ carrying patch pixel membership or grid indices has been withheld, and the relea
 keep the patch attributes while dropping every coordinate column. The patch identifier `pid`
 is internal and carries no location.
 
-農業部農村發展及水土保持署之事件型崩塌目錄，再散布權不屬本研究，須逕向該署申請。凡帶有
-斑塊像元歸屬或網格索引之檔案一律不釋出；釋出之表格保留斑塊屬性，座標欄位全部移除。
 
 Consequently tier B needs that catalogue, while tier A — every statistic reported — runs from
 the tables shipped here.
