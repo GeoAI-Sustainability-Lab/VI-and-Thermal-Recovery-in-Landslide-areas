@@ -1,0 +1,19 @@
+The data tables and derived results in this repository - the contents of outputs/
+and data/ produced by this study - are licensed under the Creative Commons
+Attribution 4.0 International licence (CC BY 4.0).
+
+    https://creativecommons.org/licenses/by/4.0/
+
+Attribution: Hsu, Y.-C. Land surface temperature recovers more slowly than greenness
+after forest disturbance: satellite evidence from montane Taiwan, 2013-2026.
+
+This licence covers only material created by this study. Third-party inputs keep their
+own licences, listed in README.md and outputs/DATA_PROVENANCE.json:
+
+  Landsat Collection 2 Level-2            USGS, public domain
+  Sentinel-1/2/3, Copernicus DEM GLO-30   ESA Copernicus data terms
+  ETH global canopy height model          CC BY 4.0
+  Hansen Global Forest Change 2024        CC BY 4.0
+  4th National Forest Resource Inventory  Taiwan Open Government Data Licence
+  Event-based landslide catalogue         Agency of Rural Development and Soil and
+                                          Water Conservation, Taiwan; not redistributed

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this data or code, please cite it as below."
+type: software
+title: "VI and Thermal Recovery in Landslide Areas: data and code"
+abstract: >-
+  Pipeline and model-ready data for a satellite-scale test of whether land surface
+  temperature recovers as fast as greenness after forest disturbance, using Landsat 8/9
+  summer composites (2013-2026), Taiwan's official event-based landslide catalogue and
+  terrain-matched intact-forest controls. Every statistic can be recomputed from the
+  tables in this repository.
+authors:
+  - family-names: Hsu
+    given-names: Yu-Chun
+    orcid: "https://orcid.org/0000-0002-6616-6906"
+    email: bigq@nchu.edu.tw
+    affiliation: >-
+      Department of Forestry, National Chung Hsing University; Innovation and Development
+      Center of Sustainable Agriculture (SMARTer), Taichung, Taiwan
+version: "1.0.0"
+date-released: "2026-08-31"
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
+repository-code: "https://github.com/GeoAI-Sustainability-Lab/VI-and-Thermal-Recovery-in-Landslide-areas"
+keywords:
+  - land surface temperature
+  - canopy height
+  - forest microclimate
+  - post-disturbance recovery
+  - satellite time series
+  - Landsat
+  - landslide
+  - Taiwan

@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Rendered figures are not tracked; figure scripts write here
+figures/
+fonts/
+
+# Raster archives streamed by step00-step08 (about 18 GB)
+data/*.tif
+data/*.vrt
+data/raw/
+data/acc/*.npz
+data/acc/*.tif
+
+# Files that would amount to redistributing the landslide catalogue geometry
+data/patches_raw*.parquet
+data/patches_deltas.parquet

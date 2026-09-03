@@ -1,0 +1,21 @@
+# Statistics and tables
+numpy
+pandas
+pyarrow
+scipy
+scikit-learn
+shap
+
+# Geospatial, needed only by the acquisition steps (step00-step08)
+rasterio
+rioxarray
+geopandas
+shapely
+pyproj
+odc-stac
+pystac-client
+planetary-computer
+
+# Figure scripts
+matplotlib
+pillow
