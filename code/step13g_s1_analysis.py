@@ -4,7 +4,9 @@
     the Morakot cohort (t_event 2009.5-2009.75).
 (2) Within-patch slopes d(dgamma)/dt from the 3 yearly observations per patch:
     cohort-composition-free closure rate; implied tau = -mean(delta)/mean(slope).
-Adds keys fit_vh_xmor, fit_vv_xmor, within_patch, morakot_s1 to s1_pilot.json.
+Writes outputs/s1_pilot.json in full: the pooled fits fit_vh / fit_vv, the
+fits excluding the Morakot cohort fit_vh_xmor / fit_vv_xmor, within_patch and
+morakot_s1. Reads only data/s1_pilot_rows.parquet and data/patches_deltas2.parquet.
 """
 import os as _os
 # 專案根目錄：優先取環境變數 THERMAL_ROOT，否則取本檔所在 code/ 的上一層。
@@ -48,7 +50,13 @@ def fit_rec(d, val, tmax=21, min_bin=10):
                           se=bs_.tolist(), n=bn))
 
 
-S = json.load(open(f"{O}/s1_pilot.json"))
+# Pooled fits from the rows table (the same fit that step13e made from the
+# raster checkpoint), so this step is complete on its own from data/.
+S = {"n_rows": int(len(df)), "n_patches": int(df.pid.nunique())}
+for b in ["vh", "vv"]:
+    S[f"fit_{b}"] = fit_rec(df, f"d{b}_db")
+    if S[f"fit_{b}"]:
+        print(f"{b} pooled tau={S[f'fit_{b}']['tau']:.1f}±{S[f'fit_{b}']['tau_se']:.1f}")
 for b in ["vh", "vv"]:
     f_ = fit_rec(df[~mor], f"d{b}_db")
     S[f"fit_{b}_xmor"] = f_

@@ -7,7 +7,7 @@ abstract: >-
   temperature recovers as fast as greenness after forest disturbance, using Landsat 8/9
   summer composites (2013-2026), Taiwan's official event-based landslide catalogue and
   terrain-matched intact-forest controls. Every statistic can be recomputed from the
-  tables in this repository.
+  tables in this repository with reproduce.py; no imagery and no figure scripts are included.
 authors:
   - family-names: Hsu
     given-names: Yu-Chun
@@ -16,8 +16,8 @@ authors:
     affiliation: >-
       Department of Forestry, National Chung Hsing University; Innovation and Development
       Center of Sustainable Agriculture (SMARTer), Taichung, Taiwan
-version: "1.1.0"
-date-released: "2026-09-03"
+version: "1.2.0"
+date-released: "2026-09-04"
 license: MIT
 license-url: "https://opensource.org/licenses/MIT"
 doi: 10.5281/zenodo.22281543

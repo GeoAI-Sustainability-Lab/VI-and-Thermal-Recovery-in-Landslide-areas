@@ -3,17 +3,21 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 
-# Rendered figures are not tracked; figure scripts write here
-figures/
-fonts/
+# Work copy written by reproduce.py
+reproduced/
 
-# Raster archives streamed by step00-step08 (about 18 GB)
+# Raster archives streamed by the tier-B steps (about 18 GB)
 data/*.tif
 data/*.vrt
 data/raw/
+data/forest4/
 data/acc/*.npz
 data/acc/*.tif
+data/acc57/
+outputs/*.npz
+outputs/logs/
 
 # Files that would amount to redistributing the landslide catalogue geometry
 data/patches_raw*.parquet
 data/patches_deltas.parquet
+data/event_codes.json

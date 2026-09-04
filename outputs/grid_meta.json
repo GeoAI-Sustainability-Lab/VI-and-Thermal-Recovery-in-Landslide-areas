@@ -80,6 +80,6 @@
   "tau_greenness": 26.331076738495042,
   "ratio": 1.1005215708611409,
   "rows": 115127,
-  "definition": "事件崩塌與全部年損失斑塊合併之分箱指數擬合，設定同 step16"
+  "definition": "event landslides and all annual-loss patches pooled; binned exponential fit with the step16 settings"
  }
 }

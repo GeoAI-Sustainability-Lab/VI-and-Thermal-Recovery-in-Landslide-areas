@@ -1,4 +1,4 @@
-# Statistics and tables
+# Reproduction from the shipped tables (reproduce.py, stages 1-4)
 numpy
 pandas
 pyarrow
@@ -6,7 +6,7 @@ scipy
 scikit-learn
 shap
 
-# Geospatial, needed only by the acquisition steps (step00-step08)
+# Rebuilding the tables from the source archives (tier B, step00-step26)
 rasterio
 rioxarray
 geopandas
@@ -15,7 +15,3 @@ pyproj
 odc-stac
 pystac-client
 planetary-computer
-
-# Figure scripts
-matplotlib
-pillow
