@@ -7,16 +7,6 @@ Version 1.2.0. Cite as `doi:10.5281/zenodo.22281543` (resolves to the latest ver
 Data and code for a satellite-scale test of whether land surface temperature (LST) recovers
 as fast as greenness after forest disturbance, in the montane forests of Taiwan, 2013–2026.
 
-This repository holds the model-ready tables and the analysis code, nothing else: no
-imagery, no rendered figures and no figure scripts. One command, `python3 reproduce.py`,
-rebuilds every statistic reported in the paper from the tables in `data/`, in the order of
-the paper's Methods section, and compares each value with the released copy in `outputs/`.
-
-本倉庫只含分析用表格與程式，不含影像、圖檔與繪圖程式。`python3 reproduce.py` 依論文方法節
-的順序，從 `data/` 的表格重算全部統計量，並與 `outputs/` 逐鍵比對；每一個報告的數字都應
-逐位元重現。影像層次的前處理（第 B 層）需自行從公開檔案庫串流，其取用位置與逐檔校驗和
-記錄於 `outputs/DATA_PROVENANCE.json`。
-
 ---
 
 ## 1. Quick start
@@ -297,9 +287,6 @@ study, so the catalogue must be requested from that agency. For the same reason 
 carrying patch pixel membership or grid indices has been withheld, and the released tables
 keep the patch attributes while dropping every coordinate column. The patch identifier `pid`
 is internal and carries no location.
-
-農業部農村發展及水土保持署之事件型崩塌目錄，再散布權不屬本研究，須逕向該署申請。凡帶有
-斑塊像元歸屬或網格索引之檔案一律不釋出；釋出之表格保留斑塊屬性，座標欄位全部移除。
 
 Consequently tier B needs that catalogue, while tier A — every statistic reported — runs from
 the tables shipped here.
