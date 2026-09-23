@@ -36,7 +36,7 @@ STAGES = {
         ("step08n_did_uniform.py", ["results2.json"], False),
         ("step08o_area_official.py", ["results2.json"], False),
         ("step08p_rebuild_stats.py", ["results2.json"], False),
-        ("step20_eventstudy.py", ["eventstudy.json"], False),
+        ("step20_eventstudy.py", ["eventstudy.json"], False),   # 1.3.1: also saves the joint covariance for step40
         ("step27_table2.py", ["table2_agents.json"], False),
     ]),
     2: ("Section 2.5  recovery clocks, strata, Morakot, Sentinel-1", [
@@ -74,7 +74,19 @@ STAGES = {
         ("step30_quality_checks.py", ["median_validation.json", "s3_results.json",
                                       "chm2_compare.json"], False),
     ]),
+    # added in 1.3.1: honest confidence sets for the first post-event effect (Table S6). The step
+    # needs the honestdid package (a Python implementation of HonestDiD, with torch and cvxpy);
+    # when it is not installed the step is skipped and the released honest_did.json is kept.
+    5: ("Section 3.2.1  honest confidence sets under the relative-magnitude restriction", [
+        ("step40_honest_did.py", ["honest_did.json"], True),
+    ]),
 }
+
+# steps that need an optional package: (module to import, message when absent)
+OPTIONAL = {"step40_honest_did.py": ("honestdid", "honestdid not installed; pip install honestdid")}
+# files compared with a looser tolerance because their values come from a numerical test
+# inversion on a grid and simulated critical values (relative 1e-3 instead of 1e-9)
+LOOSE_TOL = {"honest_did.json": 1e-3}
 
 # Files a step reads back before rewriting (tier-B values or legacy keys are
 # carried over from the released copy); every other regenerated file is deleted
@@ -96,7 +108,8 @@ HEADLINE = [
     ("eventstudy.json", "lst_lead_pooled.mean", "pooled pre-event coefficient, °C"),
     ("eventstudy.json", "lst_pretrend.wald", "Wald statistic of the six pre-event coefficients"),
     ("eventstudy.json", "lst_pretrend.slope_ref", "pre-trend slope through the reference summer, °C/yr"),
-    ("eventstudy.json", "lst_pretrend.jump1_bound_m1", "first-year shock under the relative-magnitude bound, °C"),
+    ("honest_did.json", "lst.by_Mbar.3.robust_cs.0", "honest CS lower bound, first-year shock, Mbar = 2, °C"),
+    ("honest_did.json", "lst.breakdown_Mbar", "breakdown value of Mbar"),
     ("recovery_clocks.json", "thermal.tau", "tau_LST, yr"),
     ("recovery_clocks.json", "greenness.tau", "tau_NDVI, yr"),
     ("recovery_clocks.json", "ratio.ci.0", "tau-ratio bootstrap CI, lower"),
@@ -138,17 +151,17 @@ def dig(obj, path):
     return obj
 
 
-def same(a, b):
+def same(a, b, tol=1e-9):
     if isinstance(a, bool) or isinstance(b, bool):
         return a == b
     if isinstance(a, (int, float)) and isinstance(b, (int, float)):
         if isinstance(a, float) and isinstance(b, float) and math.isnan(a) and math.isnan(b):
             return True
-        return a == b or abs(a - b) <= 1e-9 * max(1.0, abs(a), abs(b))
+        return a == b or abs(a - b) <= tol * max(1.0, abs(a), abs(b))
     return a == b
 
 
-def diff_json(a, b, path="", out=None):
+def diff_json(a, b, path="", out=None, tol=1e-9):
     """Recursive comparison; returns a list of (path, released, recomputed)."""
     out = [] if out is None else out
     if isinstance(a, dict) and isinstance(b, dict):
@@ -157,14 +170,14 @@ def diff_json(a, b, path="", out=None):
                 out.append((f"{path}.{k}", "absent" if k not in a else "present",
                             "absent" if k not in b else "present"))
             else:
-                diff_json(a[k], b[k], f"{path}.{k}", out)
+                diff_json(a[k], b[k], f"{path}.{k}", out, tol)
     elif isinstance(a, list) and isinstance(b, list):
         if len(a) != len(b):
             out.append((path, f"len {len(a)}", f"len {len(b)}"))
         else:
             for i, (x, y) in enumerate(zip(a, b)):
-                diff_json(x, y, f"{path}[{i}]", out)
-    elif not same(a, b):
+                diff_json(x, y, f"{path}[{i}]", out, tol)
+    elif not same(a, b, tol):
         out.append((path, a, b))
     return out
 
@@ -207,7 +220,10 @@ def main():
             shutil.copytree(os.path.join(ROOT, name), os.path.join(WORK, name))
     if not COMPARE_ONLY:
         shutil.copytree(os.path.join(ROOT, "outputs"), os.path.join(WORK, "outputs"))
-    planned = [(s, f, slow) for st in stages for (s, f, slow) in STAGES[st][1] if not (QUICK and slow)]
+    import importlib.util
+    skipped_optional = {s for s, (mod, _) in OPTIONAL.items() if importlib.util.find_spec(mod) is None}
+    planned = [(s, f, slow) for st in stages for (s, f, slow) in STAGES[st][1]
+               if not (QUICK and slow) and s not in skipped_optional]
     regenerated = []
     for _, files, _ in planned:
         for f in files:
@@ -226,6 +242,9 @@ def main():
         title, steps = STAGES[st]
         print(f"stage {st}  {title}")
         for script, files, slow in steps:
+            if script in skipped_optional:
+                print(f"  {script:30s} skipped ({OPTIONAL[script][1]})")
+                continue
             if QUICK and slow:
                 print(f"  {script:30s} skipped (--quick)")
                 continue
@@ -250,7 +269,8 @@ def main():
     for f in regenerated:
         pa, pb = os.path.join(ROOT, "outputs", f), os.path.join(WORK, "outputs", f)
         if f.endswith(".json"):
-            d = diff_json(json.load(open(pa, encoding="utf-8")), json.load(open(pb, encoding="utf-8")))
+            d = diff_json(json.load(open(pa, encoding="utf-8")), json.load(open(pb, encoding="utf-8")),
+                          tol=LOOSE_TOL.get(f, 1e-9))
         else:
             d = diff_parquet(pa, pb)
         if d:

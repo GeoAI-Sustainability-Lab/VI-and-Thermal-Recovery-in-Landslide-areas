@@ -19,8 +19,9 @@ re-draws the same patches for every k, the replicate matrix over the leads
 gives their joint covariance, from which three summaries follow: a Wald test
 of all leads being zero, the slope of a linear pre-trend through the reference
 summer with its bootstrap interval, and the largest year-to-year change among
-the pre-event coefficients, which bounds the first-year estimate under the
-relative-magnitude restriction of Rambachan and Roth (2023).
+the pre-event coefficients. The joint estimate and covariance of the leads and
+the first post-event coefficients are saved for the honest confidence sets of
+step40 (Rambachan and Roth, 2023).
 
 Output: outputs/eventstudy.json
 """
@@ -136,9 +137,8 @@ def pretrend_tests(rows, reps, k_ref=-1):
               normalisation b_ref = 0, with its bootstrap interval.
     slope_free: ordinary least-squares slope with a free intercept.
     max_step: largest absolute change between consecutive pre-event
-              coefficients, the reference summer included; under a
-              relative-magnitude bound of one the first-year estimate cannot be
-              biased by more than this amount.
+              coefficients, the reference summer included, the scale of the
+              relative-magnitude restriction used in step40.
     """
     from scipy import stats
     leads = [r for r in rows if r["k"] <= -2]
@@ -162,7 +162,16 @@ def pretrend_tests(rows, reps, k_ref=-1):
     steps = np.abs(np.diff(path))
     path_b = np.column_stack([B, np.zeros(len(B))])
     steps_b = np.abs(np.diff(path_b, axis=1)).max(axis=1)
+    # joint estimate and bootstrap covariance of every lead and the first post-event
+    # coefficients, for the honest (Rambachan and Roth, 2023) confidence sets of step40
+    post_ks = [r["k"] for r in rows if 1 <= r["k"] <= 2]
+    es_ks = [int(k) for k in ks] + [int(k) for k in post_ks]
+    Bfull = np.column_stack([reps[int(k)] for k in es_ks])
+    okf = np.isfinite(Bfull).all(axis=1)
     out = dict(n_leads=df, k_leads=[int(k) for k in ks],
+               es_periods=es_ks,
+               es_betahat=[float(next(r["beta"] for r in rows if r["k"] == k)) for k in es_ks],
+               es_sigma=np.cov(Bfull[okf], rowvar=False).tolist(),
                n_nonzero=int(sum(1 for r in leads if not (r["lo"] <= 0 <= r["hi"]))),
                wald=wald, df=df, p_wald=p_wald,
                slope_ref=c_ref, slope_ref_ci=_ci(c_ref_b), slope_ref_p_gt0=float((c_ref_b > 0).mean()),
@@ -180,16 +189,12 @@ def pretrend_tests(rows, reps, k_ref=-1):
         adj_b = b1 - c_ref_b * span
         adj_free = r1["beta"] - c_free * span
         adj_free_b = b1 - c_free_b * span
-        # bound on the first-year estimate when the post-event violation of
-        # parallel trends may be as large as the largest pre-event step
-        # (relative-magnitude restriction with Mbar = 1), taken toward zero
-        sgn = np.sign(r1["beta"])
+        # the honest (Rambachan and Roth, 2023) sets for the first-year estimate are
+        # computed in step40 from es_betahat and es_sigma; max_step above is their input
         out.update(k1=int(r1["k"]), jump1=float(r1["beta"]),
                    max_abs_lead_over_jump1=float(np.abs(b).max() / abs(r1["beta"])),
                    trend_adjusted_jump1=float(adj), trend_adjusted_jump1_ci=_ci(adj_b),
-                   trend_adjusted_jump1_free=float(adj_free), trend_adjusted_jump1_free_ci=_ci(adj_free_b),
-                   jump1_bound_m1=float(sgn * (abs(r1["beta"]) - steps.max())),
-                   jump1_bound_m1_ci=_ci(sgn * (np.abs(b1) - steps_b)))
+                   trend_adjusted_jump1_free=float(adj_free), trend_adjusted_jump1_free_ci=_ci(adj_free_b))
     return out
 
 

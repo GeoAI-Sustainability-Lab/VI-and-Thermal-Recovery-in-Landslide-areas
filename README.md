@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22281543.svg)](https://doi.org/10.5281/zenodo.22281543)
 
-Version 1.3.0. Cite as `doi:10.5281/zenodo.22281543` (resolves to the latest version); see `CITATION.cff`.
+Version 1.3.1. Cite as `doi:10.5281/zenodo.22281543` (resolves to the latest version); see `CITATION.cff`.
 
 Data and code for a satellite-scale test of whether land surface temperature (LST) recovers
 as fast as greenness after forest disturbance, in the montane forests of Taiwan, 2013–2026.
@@ -34,13 +34,22 @@ as fast as greenness after forest disturbance, in the montane forests of Taiwan,
   (`dissipated_pct_exp_span`) and adds the `without_2026` sensitivity (Fig. S5b, Table 3 note).
 - `step38_net_anomaly_recovery.py` adds `cohort_summary` (Fig. S6 caption).
 
+## 1.3.1 addition (2026-09-23)
+
+- `step40_honest_did.py` computes the honest confidence sets of Rambachan and Roth (2023) for the
+  first-year net thermal shock under the relative-magnitude restriction (Section 3.2.1, Table S6) and
+  writes `outputs/honest_did.json`. It needs `pip install honestdid` (a Python implementation of the R
+  package HonestDiD, with torch and cvxpy); `reproduce.py` skips the step when the package is absent
+  and keeps the released file. `step20_eventstudy.py` now also saves the joint bootstrap covariance
+  (`es_betahat`, `es_sigma`) that step40 reads.
+
 ## 1. Quick start
 
 ```bash
 git clone https://github.com/GeoAI-Sustainability-Lab/VI-and-Thermal-Recovery-in-Landslide-areas.git
 cd VI-and-Thermal-Recovery-in-Landslide-areas
 python3 -m pip install numpy pandas pyarrow scipy scikit-learn shap
-python3 reproduce.py            # about 5 minutes; --quick skips the two bootstrap-heavy steps
+python3 reproduce.py            # about 20 minutes; --quick skips the bootstrap-heavy steps
 ```
 
 The script does not modify the repository. It links `data/` and `code/`, copies `outputs/`
@@ -135,7 +144,7 @@ exactly rather than approximately.
 | Patches entering the recovery fits | 12,963 | `step08e` | `results2.json` → `n_clean` |
 | Net thermal shock, DiD, cohorts with ≥ 50 patches | +0.82 to +2.31 °C | `step08g` | `results2.json` → `text_ranges`, `did_cohorts` |
 | Pre-event coefficients, six summers pooled | −0.04 °C (95% CI −0.10 to +0.02); jointly non-zero (Wald χ² 47.7, 6 d.f.), slope through the reference summer +0.001 °C/yr (−0.018 to +0.017) | `step20` | `eventstudy.json` → `lst_lead_pooled`, `lst_pretrend` |
-| First-year shock under the relative-magnitude bound | at least +1.02 °C (95% CI 0.84–1.19) | `step20` | `eventstudy.json` → `lst_pretrend.jump1_bound_m1` |
+| First-year shock, honest confidence set at M̄ = 2 | identified set +0.67 to +2.08 °C, robust 95% set +0.44 to +2.31 °C, excludes zero up to M̄ = 2.9 | `step40` | `honest_did.json` → `lst.by_Mbar`, `lst.breakdown_Mbar` |
 | Dissipated fraction, first to tenth observed year | 46.5% observed (42.6–50.4) against 41.5% from the exponential over the same span | `step35` | `form_robustness.json` → `classes.landslide_all` |
 | Thermal recovery constant τ_LST | 16.84 yr | `step16` | `recovery_clocks.json` → `thermal.tau` |
 | Greenness recovery constant τ_NDVI | 14.66 yr | `step16` | `recovery_clocks.json` → `greenness.tau` |

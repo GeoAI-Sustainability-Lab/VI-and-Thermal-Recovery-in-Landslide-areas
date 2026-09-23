@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.3.1 — 2026-09-23
+
+Inference release for the third round of pre-submission review. DOI for all versions:
+10.5281/zenodo.22281543.
+
+- **Honest confidence sets for the first post-event effect.** `step40_honest_did.py` (new) computes
+  the confidence sets of Rambachan and Roth (2023) under the relative-magnitude restriction, in which
+  the departure from parallel trends over one annual step after the event is at most Mbar times the
+  largest step among the pre-event coefficients. The reference summer and the first post-event summer
+  are two annual steps apart, so Mbar = 2 is the value that lets the departure accumulate over both
+  steps; the earlier bootstrap bound of 1.3.0 (`jump1_bound_m1`, which allowed one step only) is
+  withdrawn. `outputs/honest_did.json` holds, for LST and NDVI, the original set, the identified set
+  and the conditional least-favourable hybrid set for Mbar = 0.5 to 3, the breakdown value of Mbar,
+  and a self-check in which a near-zero covariance reproduces the analytical identified set. The step
+  uses the `honestdid` package (a Python implementation of the R package HonestDiD; it needs torch and
+  cvxpy) and is skipped by `reproduce.py` when the package is absent; `honest_did.json` is compared at
+  a relative tolerance of 1e-3 because its values come from a test inversion on a grid.
+- `step20_eventstudy.py` additionally saves the joint estimate and bootstrap covariance of the six
+  pre-event and the first two post-event coefficients (`es_periods`, `es_betahat`, `es_sigma`) as the
+  input of step40. All other keys of `eventstudy.json` are unchanged.
+- `reproduce.py` gains stage 5 (optional) and two headline rows for the honest sets.
+
 ## 1.3.0 — 2026-09-23
 
 Correction and extension release, prepared for the Ecological Indicators submission. DOI for all
