@@ -70,11 +70,17 @@ s1 = json.load(open(f"{O}/s1_pilot.json"))
 out["s1"] = s1.get("morakot_s1")
 
 # 26-year case trajectories that belong to Morakot
-tr = pd.read_parquet(f"{D}/case_trajectories.parquet")
-tr["dlst"] = tr.lst_p - tr.lst_c
-tr["dndvi"] = tr.ndvi_p - tr.ndvi_c
 cases = {}
-for c in ["hansen_2009_morakot", "high_elev_event", "small_morakot_event"]:
+if _os.path.exists(f"{D}/case_trajectories.parquet"):
+    tr = pd.read_parquet(f"{D}/case_trajectories.parquet")
+    tr["dlst"] = tr.lst_p - tr.lst_c
+    tr["dndvi"] = tr.ndvi_p - tr.ndvi_c
+    _case_ids = ["hansen_2009_morakot", "high_elev_event", "small_morakot_event"]
+else:
+    tr = None; _case_ids = []
+    if _os.path.exists(f"{O}/morakot.json"):
+        cases = json.load(open(f"{O}/morakot.json", encoding="utf-8")).get("cases", {})
+for c in _case_ids:
     d = tr[tr.case == c]
     if not len(d):
         continue

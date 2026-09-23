@@ -2,12 +2,37 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22281543.svg)](https://doi.org/10.5281/zenodo.22281543)
 
-Version 1.2.0. Cite as `doi:10.5281/zenodo.22281543` (resolves to the latest version); see `CITATION.cff`.
+Version 1.3.0. Cite as `doi:10.5281/zenodo.22281543` (resolves to the latest version); see `CITATION.cff`.
 
 Data and code for a satellite-scale test of whether land surface temperature (LST) recovers
 as fast as greenness after forest disturbance, in the montane forests of Taiwan, 2013–2026.
 
 ---
+
+## 1.3.0 additions and correction (2026-09-23)
+
+- The recovery long table no longer includes the pooled two-summer composite `c2425`
+  (`step08e_results2.py`); see CHANGELOG. Every recovery result file is regenerated.
+- New table-side steps, all run by `reproduce.py`:
+
+| Step | Reads | Writes | Reported in |
+| --- | --- | --- | --- |
+| `step31_class_dissipation.py` | `outputs/chrono2_long.parquet` | `outputs/class_dissipation.json` | Fig. 10, Section 3.4.2 |
+| `step32_severity_match.py` | `outputs/chrono2_long.parquet` | `outputs/severity_match.json` | Section 3.4.2, Fig. S4b |
+| `step33_patch_elevation.py` | `outputs/chrono2_long.parquet`, `data/buffering_sample.parquet` | `outputs/patch_elevation.json` | Section 2.4 |
+| `step34_functional_form.py` | `outputs/chrono2_long.parquet` | `outputs/functional_form.json` | Supplementary S4, Table S4 |
+| `step35_form_robustness.py` | `outputs/chrono2_long.parquet`, `outputs/class_dissipation.json` | `outputs/form_robustness.json` | Section 3.4.2, Fig. S5b |
+| `step36_modelfree_lag.py` | `outputs/chrono2_long.parquet` | `outputs/modelfree_lag.json` | Section 3.3.1, Fig. S5a |
+| `step37_narrowband_elev.py` | `data/buffering_sample.parquet`, `outputs/gradient_check.json` | `outputs/narrowband_elev.json`, key `narrow_band_elev` | Sections 2.6 and 3.1, Table S1 |
+| `step38_net_anomaly_recovery.py` | `outputs/chrono2_long.parquet` | `outputs/net_anomaly_recovery.json` | Section 3.4.3, Fig. S6 |
+| `step39_within_patch_period.py` | `outputs/chrono2_long.parquet`, `outputs/recovery_clocks.json` | `outputs/within_patch_period.json` | Supplementary S4 |
+
+- `step20_eventstudy.py` now also writes `lst_pretrend` and `ndvi_pretrend` (Wald test of the
+  pre-event coefficients on their bootstrap covariance, pre-trend slopes, the largest year-to-year
+  step and the first-year estimate under the relative-magnitude bound; Section 3.2.1, Table S5).
+- `step35_form_robustness.py` evaluates the exponential over the same span as the observed bins
+  (`dissipated_pct_exp_span`) and adds the `without_2026` sensitivity (Fig. S5b, Table 3 note).
+- `step38_net_anomaly_recovery.py` adds `cohort_summary` (Fig. S6 caption).
 
 ## 1. Quick start
 
@@ -109,7 +134,9 @@ exactly rather than approximately.
 | Disturbed patches analysed | 15,679 landslide + 7,847 annual-loss = 23,526 | `step08e` | `results2.json` → `n_event`, `n_hansen` |
 | Patches entering the recovery fits | 12,963 | `step08e` | `results2.json` → `n_clean` |
 | Net thermal shock, DiD, cohorts with ≥ 50 patches | +0.82 to +2.31 °C | `step08g` | `results2.json` → `text_ranges`, `did_cohorts` |
-| Pre-event coefficients, seven summers pooled | −0.04 °C (95% CI −0.10 to +0.02) | `step20` | `eventstudy.json` → `lst_lead_pooled` |
+| Pre-event coefficients, six summers pooled | −0.04 °C (95% CI −0.10 to +0.02); jointly non-zero (Wald χ² 47.7, 6 d.f.), slope through the reference summer +0.001 °C/yr (−0.018 to +0.017) | `step20` | `eventstudy.json` → `lst_lead_pooled`, `lst_pretrend` |
+| First-year shock under the relative-magnitude bound | at least +1.02 °C (95% CI 0.84–1.19) | `step20` | `eventstudy.json` → `lst_pretrend.jump1_bound_m1` |
+| Dissipated fraction, first to tenth observed year | 46.5% observed (42.6–50.4) against 41.5% from the exponential over the same span | `step35` | `form_robustness.json` → `classes.landslide_all` |
 | Thermal recovery constant τ_LST | 16.84 yr | `step16` | `recovery_clocks.json` → `thermal.tau` |
 | Greenness recovery constant τ_NDVI | 14.66 yr | `step16` | `recovery_clocks.json` → `greenness.tau` |
 | τ_LST / τ_NDVI | 1.15, patch-bootstrap 95% CI 1.09–1.20 | `step16` | quotient of the two `tau`; `ratio.ci` |

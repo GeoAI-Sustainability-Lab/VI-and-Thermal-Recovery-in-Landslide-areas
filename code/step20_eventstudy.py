@@ -14,6 +14,14 @@ k < 0 are leads (should be flat and near zero if patches and their controls
 were on parallel paths), k >= 1 are lags (the treatment path). Uncertainty is
 a patch-level block bootstrap because one patch supplies many epochs.
 
+Pre-trend evidence beyond the per-year intervals. Because every replicate
+re-draws the same patches for every k, the replicate matrix over the leads
+gives their joint covariance, from which three summaries follow: a Wald test
+of all leads being zero, the slope of a linear pre-trend through the reference
+summer with its bootstrap interval, and the largest year-to-year change among
+the pre-event coefficients, which bounds the first-year estimate under the
+relative-magnitude restriction of Rambachan and Roth (2023).
+
 Output: outputs/eventstudy.json
 """
 import os as _os
@@ -81,24 +89,27 @@ def _patch_tables(d, ks):
     return pid_u, S, N
 
 
-def curve(d, nmin=None):
+def curve(d, nmin=None, return_reps=False):
     """mean beta by k with a patch-level block bootstrap CI.
 
     Resampling patches with replacement is equivalent to drawing a multinomial
     weight vector over patches, so each replicate is two dot products per k
-    rather than a rebuild of the table.
+    rather than a rebuild of the table. One weight vector serves every k, so
+    the replicates of different k are jointly distributed and their covariance
+    is available when return_reps is set.
     """
     ks = sorted(k for k, g in d.groupby("k") if len(g) >= (nmin or NMIN))
     if not ks:
-        return []
+        return ([], {}) if return_reps else []
     pid_u, S, N = _patch_tables(d, ks)
     npat = len(pid_u)
     Wm = rng.multinomial(npat, np.full(npat, 1.0 / npat), size=NBOOT).astype(float)
-    out = []
+    out, reps = [], {}
     for k in ks:
         num = Wm @ S[k]
         den = Wm @ N[k]
         bb = np.where(den > 0, num / np.maximum(den, 1e-12), np.nan)
+        reps[int(k)] = bb
         bb = bb[np.isfinite(bb)]
         g = d[d.k == k]
         out.append(dict(k=int(k), n=int(len(g)), n_patch=int(g.pid.nunique()),
@@ -106,6 +117,79 @@ def curve(d, nmin=None):
                         lo=float(np.percentile(bb, 2.5)),
                         hi=float(np.percentile(bb, 97.5)),
                         p_gt0=float((bb > 0).mean())))
+    return (out, reps) if return_reps else out
+
+
+def _ci(x):
+    x = np.asarray(x, float)
+    x = x[np.isfinite(x)]
+    return float(np.percentile(x, 2.5)), float(np.percentile(x, 97.5))
+
+
+def pretrend_tests(rows, reps, k_ref=-1):
+    """joint and trend summaries of the leads (k <= -2) from the replicate matrix.
+
+    wald    : b' V^-1 b with V the bootstrap covariance of the lead means,
+              df = number of leads, p from the chi-square distribution.
+    slope_ref : least-squares slope of a line through the reference summer
+              (b_k = c (k - k_ref)), the pre-trend consistent with the
+              normalisation b_ref = 0, with its bootstrap interval.
+    slope_free: ordinary least-squares slope with a free intercept.
+    max_step: largest absolute change between consecutive pre-event
+              coefficients, the reference summer included; under a
+              relative-magnitude bound of one the first-year estimate cannot be
+              biased by more than this amount.
+    """
+    from scipy import stats
+    leads = [r for r in rows if r["k"] <= -2]
+    ks = np.array([r["k"] for r in leads], float)
+    b = np.array([r["beta"] for r in leads])
+    B = np.column_stack([reps[int(k)] for k in ks])          # NBOOT x n_leads
+    ok = np.isfinite(B).all(axis=1)
+    B = B[ok]
+    V = np.cov(B, rowvar=False)
+    wald = float(b @ np.linalg.solve(V, b))
+    df = len(b)
+    p_wald = float(stats.chi2.sf(wald, df))
+    x = ks - k_ref
+    c_ref = float((x @ b) / (x @ x))
+    c_ref_b = (B @ x) / (x @ x)
+    xm = ks - ks.mean()
+    c_free = float((xm @ (b - b.mean())) / (xm @ xm))
+    c_free_b = ((B - B.mean(axis=1, keepdims=True)) @ xm) / (xm @ xm)
+    # consecutive steps, reference summer appended as zero
+    path = np.append(b, 0.0)
+    steps = np.abs(np.diff(path))
+    path_b = np.column_stack([B, np.zeros(len(B))])
+    steps_b = np.abs(np.diff(path_b, axis=1)).max(axis=1)
+    out = dict(n_leads=df, k_leads=[int(k) for k in ks],
+               n_nonzero=int(sum(1 for r in leads if not (r["lo"] <= 0 <= r["hi"]))),
+               wald=wald, df=df, p_wald=p_wald,
+               slope_ref=c_ref, slope_ref_ci=_ci(c_ref_b), slope_ref_p_gt0=float((c_ref_b > 0).mean()),
+               slope_free=c_free, slope_free_ci=_ci(c_free_b),
+               max_abs_lead=float(np.abs(b).max()), rms_lead=float(np.sqrt((b ** 2).mean())),
+               max_step=float(steps.max()), max_step_ci=_ci(steps_b))
+    lag1 = [r for r in rows if r["k"] >= 1]
+    if lag1:
+        r1 = min(lag1, key=lambda r: r["k"])
+        b1 = reps[int(r1["k"])][ok]
+        # counterfactual deviation at the first post-event summer if the
+        # pre-trend through the reference continued: c_ref * (k1 - k_ref)
+        span = r1["k"] - k_ref
+        adj = r1["beta"] - c_ref * span
+        adj_b = b1 - c_ref_b * span
+        adj_free = r1["beta"] - c_free * span
+        adj_free_b = b1 - c_free_b * span
+        # bound on the first-year estimate when the post-event violation of
+        # parallel trends may be as large as the largest pre-event step
+        # (relative-magnitude restriction with Mbar = 1), taken toward zero
+        sgn = np.sign(r1["beta"])
+        out.update(k1=int(r1["k"]), jump1=float(r1["beta"]),
+                   max_abs_lead_over_jump1=float(np.abs(b).max() / abs(r1["beta"])),
+                   trend_adjusted_jump1=float(adj), trend_adjusted_jump1_ci=_ci(adj_b),
+                   trend_adjusted_jump1_free=float(adj_free), trend_adjusted_jump1_free_ci=_ci(adj_free_b),
+                   jump1_bound_m1=float(sgn * (abs(r1["beta"]) - steps.max())),
+                   jump1_bound_m1_ci=_ci(sgn * (np.abs(b1) - steps_b)))
     return out
 
 
@@ -123,7 +207,10 @@ def pooled_boot(d):
 R = {"n_boot": NBOOT, "k_ref": -1, "n_min_per_k": NMIN}
 for band in ("lst", "ndvi"):
     d = E[E.band == band]
-    R[band] = curve(d)
+    R[band], _reps = curve(d, return_reps=True)
+    R[f"{band}_pretrend"] = pretrend_tests(R[band], _reps)
+    print(band, "pretrend:", {k: (round(v, 4) if isinstance(v, float) else v)
+                              for k, v in R[f"{band}_pretrend"].items()}, flush=True)
     leads = [r for r in R[band] if r["k"] <= -2]
     lags = [r for r in R[band] if r["k"] >= 1]
     # parallel-trends summary: pooled lead mean and the largest single lead

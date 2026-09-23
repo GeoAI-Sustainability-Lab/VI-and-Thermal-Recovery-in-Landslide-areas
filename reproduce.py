@@ -49,11 +49,25 @@ STAGES = {
         ("step18_morakot.py", ["morakot.json"], False),
         ("step24b_l57_transfer_stats.py", ["l57_transfer.json"], False),
         ("step26_morakot_early.py", ["morakot_early.json"], False),
+        # added in 1.3.0: class-level dissipated fraction, severity domains, elevation of the
+        # analysed patches, functional-form comparison, model-free lag, pre-event baseline and the
+        # period-effect sensitivity of the within-patch coefficient (Sections 2.5, 3.4, Supplementary S4)
+        ("step31_class_dissipation.py", ["class_dissipation.json"], False),
+        ("step32_severity_match.py", ["severity_match.json"], False),
+        ("step33_patch_elevation.py", ["patch_elevation.json"], False),
+        ("step34_functional_form.py", ["functional_form.json"], False),
+        ("step35_form_robustness.py", ["form_robustness.json"], True),
+        ("step36_modelfree_lag.py", ["modelfree_lag.json"], True),
+        ("step38_net_anomaly_recovery.py", ["net_anomaly_recovery.json"], True),
+        ("step39_within_patch_period.py", ["within_patch_period.json"], False),
     ]),
     3: ("Section 2.6  buffering baseline and descriptive counts", [
         ("step29_buffering_model.py", ["results.json", "shap_buffering.parquet",
                                        "baseline_slope_by_height.json"], False),
         ("step15_gradient_check.py", ["gradient_check.json"], False),
+        # added in 1.3.0: the within-slice elevation term of the 250 m canopy sensitivity (Table S1);
+        # it also writes the key narrow_band_elev into gradient_check.json
+        ("step37_narrowband_elev.py", ["narrowband_elev.json", "gradient_check.json"], False),
         ("step28_descriptive_meta.py", ["grid_meta.json"], False),
     ]),
     4: ("Supplementary S1  compositing, day-night, canopy-height checks", [
@@ -69,9 +83,10 @@ CARRIED = {"results.json", "grid_meta.json", "median_validation.json", "s3_resul
 
 # Headline quantities, printed as a table at the end.
 HEADLINE = [
-    ("gradient_check.json", "narrow_band.slope", "canopy sensitivity, °C per 10 m"),
-    ("gradient_check.json", "narrow_band.se", "its standard error"),
-    ("gradient_check.json", "narrow_band.trend_p", "elevation trend p"),
+    ("gradient_check.json", "narrow_band_elev.with_elevation.slope", "canopy sensitivity, °C per 10 m (main estimate)"),
+    ("gradient_check.json", "narrow_band_elev.with_elevation.se", "its standard error"),
+    ("gradient_check.json", "narrow_band.slope", "canopy sensitivity without the elevation term"),
+    ("gradient_check.json", "narrow_band_elev.with_elevation.trend_p", "elevation trend p"),
     ("baseline_slope_by_height.json", "15", "local slope at 15 m canopy, °C per 10 m"),
     ("results.json", "gbm_r2_test", "gradient-boosting test R²"),
     ("results.json", "shap_mean_abs.chm", "mean |SHAP| of canopy height, °C"),
@@ -79,12 +94,25 @@ HEADLINE = [
     ("results2.json", "n_hansen", "annual-loss patches"),
     ("results2.json", "n_clean", "patches entering the recovery fits"),
     ("eventstudy.json", "lst_lead_pooled.mean", "pooled pre-event coefficient, °C"),
+    ("eventstudy.json", "lst_pretrend.wald", "Wald statistic of the six pre-event coefficients"),
+    ("eventstudy.json", "lst_pretrend.slope_ref", "pre-trend slope through the reference summer, °C/yr"),
+    ("eventstudy.json", "lst_pretrend.jump1_bound_m1", "first-year shock under the relative-magnitude bound, °C"),
     ("recovery_clocks.json", "thermal.tau", "tau_LST, yr"),
     ("recovery_clocks.json", "greenness.tau", "tau_NDVI, yr"),
     ("recovery_clocks.json", "ratio.ci.0", "tau-ratio bootstrap CI, lower"),
     ("recovery_clocks.json", "ratio.ci.1", "tau-ratio bootstrap CI, upper"),
     ("recovery_clocks.json", "n_patches", "patches in the recovery fit"),
     ("within_patch.json", "thermal.frac", "decline reproduced within patches"),
+    ("within_patch_period.json", "thermal.frac_patch_epoch_fe", "same with epoch fixed effects"),
+    ("class_dissipation.json", "landslide_all.dissipated.10", "landslide anomaly dissipated by 10 yr, %"),
+    ("class_dissipation.json", "ls_ge10.dissipated.10", "same, scars ≥ 10 ha"),
+    ("class_dissipation.json", "al_ge2.dissipated.10", "same, annual loss ≥ 2 ha"),
+    ("form_robustness.json", "classes.landslide_all.model_free.dissipated_pct", "observed-bin dissipation, first to tenth year, %"),
+    ("form_robustness.json", "classes.landslide_all.dissipated_pct_exp_span", "exponential over the same span, %"),
+    ("form_robustness.json", "without_2026.ratio", "tau ratio without the 2026 summer"),
+    ("modelfree_lag.json", "remaining_at_10yr.difference_thermal_minus_greenness.point", "model-free lag at 10 yr"),
+    ("functional_form.json", "landslide_dndvi.models.exponential.d_qaicc", "ΔQAICc of the exponential, greenness"),
+    ("net_anomaly_recovery.json", "pre_share_of_first_year", "pre-event share of the first-year anomaly"),
     ("strata_curves.json", "lt2.thermal.tau", "tau_LST, scars < 2 ha"),
     ("strata_curves.json", "ge10.thermal.tau", "tau_LST, scars ≥ 10 ha"),
     ("strata_curves.json", "gt2000.thermal.tau", "tau_LST above 2,000 m"),

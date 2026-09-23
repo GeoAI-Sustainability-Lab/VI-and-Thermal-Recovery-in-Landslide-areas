@@ -20,7 +20,10 @@ EPOCH_MID = {"c13": 2013.62, "c14": 2014.62, "c15": 2015.62,
              "c16": 2016.62, "c17": 2017.62, "c18": 2018.62,
              "c19": 2019.62,
              "c20": 2020.62, "c21": 2021.62, "c22": 2022.62, "c23": 2023.62,
-             "c24": 2024.62, "c25": 2025.62, "c26": 2026.55, "c2425": 2025.12}
+             "c24": 2024.62, "c25": 2025.62, "c26": 2026.55}
+# The pooled two-summer composite c2425 is NOT an epoch of the age axis: its summers already enter
+# through c24 and c25, so including it would count 2024-2025 twice per patch (corrected in 1.3.0).
+# It remains available in patches_deltas2 for cross-sectional uses only.
 
 p = pd.read_parquet(f"{D}/patches_deltas2.parquet")
 R = {"n_patches": int(len(p)), "n_event": int((p.src == "event").sum()),
@@ -137,6 +140,11 @@ R["year1_by_agent"] = {a: dict(n=int(len(g)), mean=float(g.dlst.mean()),
                                se=float(g.dlst.std() / np.sqrt(len(g))))
                        for a, g in y1.groupby("agent") if len(g) >= 8}
 
+# Later steps (08g, 08m, 08n, 08o, 08p) add their own keys to results2.json; keep them on a rerun.
+if _os.path.exists(f"{O}/results2.json"):
+    _old = json.load(open(f"{O}/results2.json", encoding="utf-8"))
+    _old.update(R)
+    R = _old
 json.dump(R, open(f"{O}/results2.json", "w"), ensure_ascii=False, indent=1)
 key = {k: (f"tau={v['tau']:.1f}±{v['tau_se']:.1f}" if v and "tau" in v else "n/a")
        for k, v in F.items()}

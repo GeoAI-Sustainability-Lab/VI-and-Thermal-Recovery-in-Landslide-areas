@@ -1,5 +1,55 @@
 # Changelog
 
+## 1.3.0 — 2026-09-23
+
+Correction and extension release, prepared for the Ecological Indicators submission. DOI for all
+versions: 10.5281/zenodo.22281543.
+
+- **Corrected age axis.** `step08e_results2.py` no longer lists the pooled two-summer composite
+  `c2425` among the epochs of the recovery long table. Its two summers already enter through `c24`
+  and `c25`, so 1.2.0 counted 2024-2025 twice for every patch observed in those years (3,674 of
+  42,245 landslide rows). `outputs/chrono2_long.parquet` and every file downstream of it are
+  regenerated: `results2.json` (fits2, year1_by_agent), `recovery_clocks.json`,
+  `strata_curves.json`, `morakot.json`, `within_patch.json`, `epoch_era.json`. The pooled
+  constants move from 16.84 / 14.66 yr to 16.78 / 14.36 yr
+  (ratio 1.149 to 1.168); no direction changes. The pooled
+  composite remains in `data/patches_deltas2.parquet` for cross-sectional use and feeds the
+  intact-forest buffering baseline only. `step08e` now merges its keys into an existing
+  `results2.json` instead of overwriting it, so the step can be rerun after the later steps.
+- **Canopy sensitivity with the within-slice elevation term.** `step37_narrowband_elev.py` recomputes
+  the 250 m-slice contrast with elevation in the within-slice residualisation and writes
+  `outputs/narrowband_elev.json` plus the key `narrow_band_elev` in `gradient_check.json`. The
+  paper's main estimate is now -0.39 +/- 0.03 °C per 10 m; the value
+  without the term, -0.48 +/- 0.03, is reported as a sensitivity.
+- **New table-side steps and result files** (all reachable from `data/` and `outputs/`):
+  `step31_class_dissipation.py` (`class_dissipation.json`, dissipated fraction of the initial anomaly
+  by disturbance class), `step32_severity_match.py` (`severity_match.json`), `step33_patch_elevation.py`
+  (`patch_elevation.json`), `step34_functional_form.py` (`functional_form.json`, seven candidate forms
+  with QAICc), `step35_form_robustness.py` (`form_robustness.json`, tau ratio under an asymptote and the
+  observed-bin ten-year fraction), `step36_modelfree_lag.py` (`modelfree_lag.json`, the thermal versus
+  greenness lag without a fitted curve), `step38_net_anomaly_recovery.py` (`net_anomaly_recovery.json`,
+  the anomaly relative to each patch's pre-event summer), `step39_within_patch_period.py`
+  (`within_patch_period.json`, the within-patch coefficient with calendar-epoch fixed effects).
+- `step18_morakot.py` carries the 26-year case series forward from the released `morakot.json` when
+  `data/case_trajectories.parquet` is absent, so the cohort statistics can be regenerated on their own.
+- **Pre-trend evidence of the event study.** `step20_eventstudy.py` keeps the bootstrap replicates
+  of every lead coefficient (one weight vector serves every year of a resample, so the replicates
+  are jointly distributed) and writes `lst_pretrend` and `ndvi_pretrend` into `eventstudy.json`: a
+  Wald test of the six pre-event coefficients on their bootstrap covariance, the slope of a linear
+  pre-trend through the reference summer and with a free intercept, the first-year estimate after
+  either trend is removed, the largest year-to-year step among the pre-event coefficients and the
+  first-year estimate under the relative-magnitude restriction of Rambachan and Roth (2023). The
+  coefficients themselves are unchanged.
+- **Common time span for the fitted and observed dissipated fraction.** `step35_form_robustness.py`
+  evaluates the exponential over the same span as the observed bins, from the first observed bin to
+  the bin nearest ten years (`dissipated_pct_exp_span`, `span_yr`), records for every class whether
+  that value lies inside the observed-bin interval, and adds `without_2026`, the pooled landslide
+  clocks refitted with every observation of the truncated 2026 summer removed.
+- `step38_net_anomaly_recovery.py` adds `cohort_summary`, the patch count, row count and oldest
+  observed age of every cohort with a pre-event summer.
+- `reproduce.py` runs the new steps in stages 2 and 3 (30 steps in all) and adds their headline
+  quantities to the closing table. `--quick` skips the four bootstrap-heavy steps.
+
 ## 1.2.0 — 2026-09-04
 
 Data-and-reproduction release. DOI for all versions: 10.5281/zenodo.22281543.

@@ -1,0 +1,26 @@
+{
+ "thermal": {
+  "n_rows": 36910,
+  "n_patches": 3523,
+  "n_epochs": 14,
+  "A_pooled": 3.070207334046989,
+  "tau_pooled": 16.775994085703754,
+  "beta_patch_fe": 2.2401720555411893,
+  "frac_patch_fe": 0.7296484607729439,
+  "beta_patch_epoch_fe": 3.369055924931767,
+  "frac_patch_epoch_fe": 1.0973382440888289,
+  "g_variation_left_after_epoch_fe": 0.014655638009202013
+ },
+ "greenness": {
+  "n_rows": 36905,
+  "n_patches": 3523,
+  "n_epochs": 14,
+  "A_pooled": -0.3411185417124473,
+  "tau_pooled": 14.359994638542442,
+  "beta_patch_fe": -0.2782539993997411,
+  "frac_patch_fe": 0.8157105679535323,
+  "beta_patch_epoch_fe": -0.531703669702022,
+  "frac_patch_epoch_fe": 1.558706445662025,
+  "g_variation_left_after_epoch_fe": 0.020062838515899736
+ }
+}
